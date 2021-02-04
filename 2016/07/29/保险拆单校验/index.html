@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | Hexo</title>
+  <title>保险拆单校验 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="业务上需要，老范叫加一个拆单校验。规则是这样的： 个险渠道自动核保条件增加一条：若同一投保人、同一被保险人、同样的保险计划，在一周内出现两单及以上，系统自动核保不通过，提示语言为： 疑似拆单，请核保师关注。  由于规则条件较多，刚工作的小姑娘显然搞不了啊。之前由于契约归我做，所以稍微跟她讲了一下思路，oracle自带的列转行函数可以轻松地（bian tai de ）实现一些转换。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2021/02/05/hello-world/index.html">
+<meta property="og:title" content="保险拆单校验">
+<meta property="og:url" content="http://example.com/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="业务上需要，老范叫加一个拆单校验。规则是这样的： 个险渠道自动核保条件增加一条：若同一投保人、同一被保险人、同样的保险计划，在一周内出现两单及以上，系统自动核保不通过，提示语言为： 疑似拆单，请核保师关注。  由于规则条件较多，刚工作的小姑娘显然搞不了啊。之前由于契约归我做，所以稍微跟她讲了一下思路，oracle自带的列转行函数可以轻松地（bian tai de ）实现一些转换。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-02-04T16:59:41.747Z">
-<meta property="article:modified_time" content="2020-05-04T16:22:54.450Z">
+<meta property="article:published_time" content="2016-07-29T09:13:03.000Z">
+<meta property="article:modified_time" content="2016-07-29T09:26:29.804Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -249,11 +249,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-保险拆单校验" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2021/02/05/hello-world/" class="article-date">
-      <time datetime="2021-02-04T16:59:41.747Z" itemprop="datePublished">2021-02-05</time>
+      <a href="/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/" class="article-date">
+      <time datetime="2016-07-29T09:13:03.000Z" itemprop="datePublished">2016-07-29</time>
 </a>
     </div>
   
@@ -266,7 +266,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      保险拆单校验
     </h1>
   
 
@@ -283,15 +283,36 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <p>业务上需要，老范叫加一个拆单校验。规则是这样的：</p>
+<p>个险渠道自动核保条件增加一条：<br>若同一投保人、同一被保险人、同样的保险计划，在一周内出现两单及以上，系统自动核保不通过，提示语言为： 疑似拆单，请核保师关注。</p>
+<hr>
+<p>由于规则条件较多，刚工作的小姑娘显然搞不了啊。<br>之前由于契约归我做，所以稍微跟她讲了一下思路，oracle自带的列转行函数可以轻松地（bian tai de ）实现一些转换。</p>
+<ul>
+<li><a id="more"></a>
+no bb ，po代码：</li>
+</ul>
+<p>—本单特征码<br>SELECT 1<br>  FROM (SELECT to_char(WMSYS.WM_CONCAT(a.riskcode)) vv<br>          FROM lcpol a<br>         WHERE a.contno = ‘531010000045735’<br>               and a.cvalidate &gt; sysdate - 7<br>               and not exists (select 1<br>                  from lccont k<br>                 where k.contno = a.contno<br>                   and k.appflag = ‘0’)) a<br> WHERE a.vv in</p>
+<pre><code>   (
+    ----近一周的特征码跟数量
+    SELECT a.vv num
+      FROM (SELECT a.contno, to_char(WMSYS.WM_CONCAT(a.riskcode)) vv
+               FROM lcpol a
+              WHERE 1 = 1
+                and not exists (select 1
+                       from lccont k
+                      where k.contno = a.contno
+                        and k.appflag = &#39;0&#39;)
+                and a.cvalidate &gt; sysdate - 7
+                and a.uwflag not in (&#39;1&#39;, &#39;2&#39;, &#39;a&#39;)
+                and a.salechnl = &#39;02&#39;
+              GROUP BY a.contno) a
+     group by a.vv
+    having count(1) &gt; 1 );
+</code></pre>
+<p> 写完之后，其实思路应该是这样的，这个所谓的思路是根据逆向的一个结果反思出的。</p>
+<p> 其实大部分时间都是在特征码的统计上，于是写出了近一周的特征码跟数量这个sql。写完发现其实这个是保单无关的，也就是只需要知道哪些特征码是不合法的即可，然后让本单的特征码跟这些不合法的比较即可。</p>
+<p> 后续当然可以继续调优啦。比如这一周的特征码，我只关注与本次这个客户的，相信效率不再是问题，即使一个月内的保单也能轻松应付。</p>
+<p> 以上。</p>
 
       
     </div>
@@ -300,13 +321,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2021/02/05/hello-world/">Hello World</a></p>
+        <p><span>本文标题:</span><a href="/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/">保险拆单校验</a></p>
         <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-        <p><span>发布时间:</span>2021年02月05日 - 00时59分</p>
-        <p><span>最后更新:</span>2020年05月05日 - 00时22分</p>
+        <p><span>发布时间:</span>2016年07月29日 - 17时13分</p>
+        <p><span>最后更新:</span>2016年07月29日 - 17时26分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2021/02/05/hello-world/" title="Hello World">http://example.com/2021/02/05/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://example.com/2021/02/05/hello-world/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/" title="保险拆单校验">http://example.com/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://example.com/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -319,10 +340,16 @@
 
     <nav id="article-nav">
         
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2020/05/05/day1/">
+                    day1
+                </a>
+            </div>
+        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2020/07/20/2020/">
-                    2020
+                <a href="/2016/04/13/web%E6%94%AF%E6%8C%81cors/">
+                    web支持cors
                 </a>
             </div>
         
@@ -333,7 +360,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    
 </div>
 <style>
     .left-col .switch-btn {
@@ -395,7 +422,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2021/02/05/hello-world/" data-title="Hello World" data-url="http://example.com/2021/02/05/hello-world/"></div>
+    <div class="ds-thread" data-thread-key="2016/07/29/保险拆单校验/" data-title="保险拆单校验" data-url="http://example.com/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -419,13 +446,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2020/05/05/day1/" title="上一篇: day1">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2020/07/20/2020/" title="下一篇: 2020">
+            <a href="/2016/04/13/web%E6%94%AF%E6%8C%81cors/" title="下一篇: web支持cors">
                 <i class="fa fa-angle-right"></i>
             </a>
         
