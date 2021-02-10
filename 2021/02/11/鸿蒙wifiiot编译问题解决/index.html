@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>day1 | ㄣ西石  ·  博客</title>
+  <title>鸿蒙wifiiot编译问题解决 | ㄣ西石  ·  博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天是个周几了？ 我的五一假期哟">
+  <meta name="description" content="rm&#x2F;system -Lbuild&#x2F;build_tmp&#x2F;scripts -Lbuild&#x2F;libs -Lbuild&#x2F;libs&#x2F;hi3861&#x2F;release&#x2F;no_mesh -Lbuild&#x2F;scripts -Lohos&#x2F;libs -Tbuild&#x2F;build_tmp&#x2F;scripts&#x2F;link.lds -Map&#x3D;output&#x2F;bin&#x2F;Hi3861_wifiiot_app.map -o output&#x2F;bin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="day1">
-<meta property="og:url" content="http://yoursite.com/2020/05/05/day1/index.html">
+<meta property="og:title" content="鸿蒙wifiiot编译问题解决">
+<meta property="og:url" content="http://yoursite.com/2021/02/11/%E9%B8%BF%E8%92%99wifiiot%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/index.html">
 <meta property="og:site_name" content="ㄣ西石  ·  博客">
-<meta property="og:description" content="今天是个周几了？ 我的五一假期哟">
+<meta property="og:description" content="rm&#x2F;system -Lbuild&#x2F;build_tmp&#x2F;scripts -Lbuild&#x2F;libs -Lbuild&#x2F;libs&#x2F;hi3861&#x2F;release&#x2F;no_mesh -Lbuild&#x2F;scripts -Lohos&#x2F;libs -Tbuild&#x2F;build_tmp&#x2F;scripts&#x2F;link.lds -Map&#x3D;output&#x2F;bin&#x2F;Hi3861_wifiiot_app.map -o output&#x2F;bin">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-05-04T16:45:16.000Z">
-<meta property="article:modified_time" content="2020-05-04T16:46:17.641Z">
+<meta property="article:published_time" content="2021-02-10T16:18:56.000Z">
+<meta property="article:modified_time" content="2021-02-10T16:19:40.795Z">
 <meta property="article:author" content="ㄣ西石">
 <meta name="twitter:card" content="summary">
   
@@ -249,11 +249,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-day1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-鸿蒙wifiiot编译问题解决" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/05/05/day1/" class="article-date">
-      <time datetime="2020-05-04T16:45:16.000Z" itemprop="datePublished">2020-05-05</time>
+      <a href="/2021/02/11/%E9%B8%BF%E8%92%99wifiiot%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="article-date">
+      <time datetime="2021-02-10T16:18:56.000Z" itemprop="datePublished">2021-02-11</time>
 </a>
     </div>
   
@@ -266,7 +266,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      day1
+      鸿蒙wifiiot编译问题解决
     </h1>
   
 
@@ -283,8 +283,30 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>今天是个周几了？</p>
-<p>我的五一假期哟</p>
+        <p>rm/system -Lbuild/build_tmp/scripts -Lbuild/libs -Lbuild/libs/hi3861/release/no_mesh -Lbuild/scripts -Lohos/libs -Tbuild/build_tmp/scripts/link.lds -Map=output/bin/Hi3861_wifiiot_app.map -o output/bin/Hi3861_wifiiot_app.out –start-group –no-whole-archive –whole-archive -lHwKeystoreSDK -ladc -lat -lauthmanager -lbootstrap -lbroadcast -lc_flash -lcfg -lcjson_static -lcmsis -lcommon_lite -lcpup -ldiag -ldiscovery -ldrv -lflash -lgcc -lgpio -lhal_file_static -lhal_iothardware -lhal_sysparam -lhal_token_static -lhichainsdk -lhilog_lite -lhiview_lite -lio -liothardware -liperf -lkal -lled_example -llitekernel_flash -lltoswpa -llwip -lm_flash -lmbedtls -lnative_file -lparttab -lres_cfg -lsamgr -lsamgr_adapter -lsamgr_source -lsdio -lsec_flash -lsensing_demo -lspiffs -lsysparam -lsystem -ltoken_static -ltrans_service -ltsensor -luart -lupg -lutils_kv_store -lwifi -lwifi_flash -lwifiiot_app -lwifiservice -lwpa –end-group<br>riscv32-unknown-elf-ld: ohos/libs/libhal_iothardware.a(hal_wifiiot_i2c.o): in function <code>.L0 &#39;: hal_wifiiot_i2c.c:(.text.HalI2cWrite+0x12): undefined reference to </code>hi_i2c_write’<br>riscv32-unknown-elf-ld: hal_wifiiot_i2c.c:(.text.HalI2cRead+0x12): undefined reference to <code>hi_i2c_read&#39; riscv32-unknown-elf-ld: hal_wifiiot_i2c.c:(.text.HalI2cInit+0x12): undefined reference to </code>hi_i2c_init’<br>riscv32-unknown-elf-ld: ohos/libs/libhal_iothardware.a(hal_wifiiot_pwm.o): in function <code>.L0 &#39;: hal_wifiiot_pwm.c:(.text.HalPwmInit+0x16): undefined reference to </code>hi_pwm_set_clock’<br>riscv32-unknown-elf-ld: hal_wifiiot_pwm.c:(.text.HalPwmInit+0x24): undefined reference to <code>hi_pwm_init&#39; riscv32-unknown-elf-ld: hal_wifiiot_pwm.c:(.text.HalPwmStart+0x12): undefined reference to </code>hi_pwm_start’<br>riscv32-unknown-elf-ld: hal_wifiiot_pwm.c:(.text.HalPwmStop+0x12): undefined reference to `hi_pwm_stop’<br>scons: *** [output/bin/Hi3861_wifiiot_app.out] Error 1<br>BUILD FAILED!!!!<br>Failed building output/bin/Hi3861_wifiiot_app.out: Error 1<br>Traceback (most recent call last):<br>  File “../../build/lite/build_ext_components.py”, line 64, in <module><br>    sys.exit(main())<br>  File “../../build/lite/build_ext_components.py”, line 58, in main<br>    cmd_exec(args.command)<br>  File “../../build/lite/build_ext_components.py”, line 32, in cmd_exec<br>    raise Exception(“{} failed, return code is {}”.format(cmd, ret_code))<br>Exception: [‘sh’, ‘hm_build.sh’] failed, return code is 2<br>ninja: build stopped: subcommand failed.<br>you can check build log in /home/tony/homo/out/wifiiot/build.log<br>/home/tony/homo/tools/ninja/ninja -w dupbuild=warn -C /home/tony/homo/out/wifiiot failed, return code is 1<br>usage: </p>
+<p>解决方法：</p>
+<ol>
+<li><p>编译过程中报错：undefined reference to <code>hi_pwm_init</code> 等几个 <code>hi_pwm_</code>开头的函数，</p>
+<ul>
+<li><strong>原因：</strong> 因为默认情况下，hi3861_sdk中，PWM的CONFIG选项没有打开</li>
+<li><strong>解决：</strong> 修改<code>vendor\hisi\hi3861\hi3861\build\config\usr_config.mk</code>文件中的<code>CONFIG_PWM_SUPPORT</code>行：<ul>
+<li><code># CONFIG_PWM_SUPPORT is not set</code>修改为<code>CONFIG_PWM_SUPPORT=y</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>编译过程中报错：undefined reference to <code>hi_i2c_init</code> 等几个 <code>hi_i2c_</code>开头的函数，</p>
+<ul>
+<li><p><strong>原因：</strong> 因为默认情况下，hi3861_sdk中，I2C的CONFIG选项没有打开</p>
+</li>
+<li><p><strong>解决：</strong> 修改<code>vendor\hisi\hi3861\hi3861\build\config\usr_config.mk</code>文件中的<code>CONFIG_I2C_SUPPORT</code>行：</p>
+<ul>
+<li><code># CONFIG_I2C_SUPPORT is not set</code>修改为<code>CONFIG_I2C_SUPPORT=y</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 
       
     </div>
@@ -293,13 +315,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/05/05/day1/">day1</a></p>
+        <p><span>本文标题:</span><a href="/2021/02/11/%E9%B8%BF%E8%92%99wifiiot%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">鸿蒙wifiiot编译问题解决</a></p>
         <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-        <p><span>发布时间:</span>2020年05月05日 - 00时45分</p>
-        <p><span>最后更新:</span>2020年05月05日 - 00时46分</p>
+        <p><span>发布时间:</span>2021年02月11日 - 00时18分</p>
+        <p><span>最后更新:</span>2021年02月11日 - 00时19分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/05/05/day1/" title="day1">http://yoursite.com/2020/05/05/day1/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2020/05/05/day1/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2021/02/11/%E9%B8%BF%E8%92%99wifiiot%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="鸿蒙wifiiot编译问题解决">http://yoursite.com/2021/02/11/%E9%B8%BF%E8%92%99wifiiot%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2021/02/11/%E9%B8%BF%E8%92%99wifiiot%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -312,16 +334,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/05/05/%E6%88%91%E5%9B%9E%E6%9D%A5%E4%BA%86/">
-                    我回来了
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/">
-                    保险拆单校验
+                <a href="/2021/02/06/%E9%B8%BF%E8%92%99Theme%E8%AE%BE%E7%BD%AE/">
+                    鸿蒙Theme设置
                 </a>
             </div>
         
@@ -394,7 +410,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2020/05/05/day1/" data-title="day1" data-url="http://yoursite.com/2020/05/05/day1/"></div>
+    <div class="ds-thread" data-thread-key="2021/02/11/鸿蒙wifiiot编译问题解决/" data-title="鸿蒙wifiiot编译问题解决" data-url="http://yoursite.com/2021/02/11/%E9%B8%BF%E8%92%99wifiiot%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -418,15 +434,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/05/05/%E6%88%91%E5%9B%9E%E6%9D%A5%E4%BA%86/" title="上一篇: 我回来了">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/" title="下一篇: 保险拆单校验">
+            <a href="/2021/02/06/%E9%B8%BF%E8%92%99Theme%E8%AE%BE%E7%BD%AE/" title="下一篇: 鸿蒙Theme设置">
                 <i class="fa fa-angle-right"></i>
             </a>
         
