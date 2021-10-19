@@ -254,6 +254,77 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-C盘清理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/19/C%E7%9B%98%E6%B8%85%E7%90%86/" class="article-date">
+      <time datetime="2021-10-19T02:49:18.000Z" itemprop="datePublished">2021-10-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/19/C%E7%9B%98%E6%B8%85%E7%90%86/">C盘清理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>方法：</p>
+<p>​    1、清理大文件</p>
+<p>​    2、映射</p>
+<p>​    3、磁盘清理（过于easy，不解释）</p>
+<p>​    1、C盘文件查找，筛选文件大小（win7+=默认支持，第三方工具亦可）</p>
+<p>​    C:\Users\henry\AppData</p>
+<p>​    Local LocalLow Roaming 删除的软件的文件，Temp可以清理，其他审慎</p>
+<p>​    2、发现了一个TMD大文件</p>
+<p>​        C:\Recovery\Customizations\USMT.ppkg</p>
+<p>​        这个玩意貌似是什么动态加载啊什么的，搞不清楚</p>
+<p>复制 Installer 目录到 D 盘：</p>
+<p>robocopy “C:WindowsInstaller” “D:WindowsInstaller” /E /COPYALL /XJ</p>
+<p>强制删除 Installer 目录：</p>
+<p>rmdir “C:WindowsInstaller” /S /Q</p>
+<p>创建 C 盘下的 User 的软件链接，链接到 D 盘 User 目录：</p>
+<p>mklink /J “C:RecoveryCustomizations” “D:RecoveryCustomizations”</p>
+<p>usmt.ppkg 处理方法同上！<br>————————————————<br>版权声明：本文为CSDN博主「weixin_39669163」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39669163/article/details/111540657">https://blog.csdn.net/weixin_39669163/article/details/111540657</a>    </p>
+<p>不过后来我一看，这不系统回复用的吗？直接干掉呵呵呵。</p>
+<p>再水一篇    </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-联邦学习" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -782,92 +853,9 @@
 
 
   
-    <article id="让java-web支持cors" class="article article-type-让java" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/13/web%E6%94%AF%E6%8C%81cors/" class="article-date">
-      <time datetime="2016-04-13T02:09:55.000Z" itemprop="datePublished">2016-04-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/13/web%E6%94%AF%E6%8C%81cors/">web支持cors</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>场景:</p>
-<pre><code>客户端发出http请求,服务端对客户端的http请求进行验证
-</code></pre>
-<p>问题:</p>
-<pre><code>问题的表象是 从Chrome发出HTTP命令后，Chrome console中报 “Origin null is not allowed by Access-Control-Allow-Origin”错误。
-</code></pre>
-<p>产生原因:</p>
-<pre><code>这是由于Browser的same origin policy 限制的缘故。简单来说，从HTML中发出XMLHttpRequest  请求时，Browser会做检查，如果发现Response中没有Access-Control-Allow-Origin Header或Access-Control-Allow-Origin Header Header的值与 HTML的 orgin 不同时，Browser会拒接绝该Response，Javascript就收不到该Response。 本地HTML的Origin是 null, 而Server端没有发出Access-Control-Allow-Origin Header Header给Browser,  所以会有了“Origin null is not allowed by Access-Control-Allow-Origin”错误。
-
-简单的说,就是由于客户端和服务端处于两个不同的域,相互之间是不允许通信的.
-
-不同的域包含:1.静态文件向服务器请求 2.客户端和服务端域名不同 3.客户端和服务端端口不同 等等,个人理解总结的,不是很准确.
-</code></pre>
-<p>解决办法:</p>
-<pre><code>事实上有一个W3C标准，Cross Origin Resource Sharing (CORS) 专门用来解决这个问题的。目前的主流Browser也有支持。CORS 在HTTP Message 加入几个Header， Browser和 Server可以利用这些Header来判断对方是否是安全，是否可以通信。
-
-http://enable-cors.org/  介绍了目前常用的服务器和技术的支持CORS的办法.其中对与JAVA Web,里面没提到.整理下让Java Web支持的办法.
-</code></pre>
-<p>Java Web支持的办法:</p>
-<pre><code>使用CORS Filter 解决.
-
-下载地址:http://software.dzhuvinov.com/cors-filter.html
-
-使用方法:http://software.dzhuvinov.com/cors-filter-installation.html 
-
-参考文章
-
-http://www.cnblogs.com/LevinJ/archive/2012/04/09/2439670.html
-</code></pre>
-<p>43 Things： CORS<br>BuzzNet： CORS<br>del.icio.us： CORS<br>Flickr： CORS<br>IceRocket： CORS<br>LiveJournal： CORS<br>Technorati： CORS</p>
-<p><a target="_blank" rel="noopener" href="http://blog.163.com/user_zhaopeng/blog/static/16602270820126111524280/">http://blog.163.com/user_zhaopeng/blog/static/16602270820126111524280/</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 </div>

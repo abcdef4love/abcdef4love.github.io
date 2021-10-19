@@ -254,6 +254,89 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="让java-web支持cors" class="article article-type-让java" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/13/web%E6%94%AF%E6%8C%81cors/" class="article-date">
+      <time datetime="2016-04-13T02:09:55.000Z" itemprop="datePublished">2016-04-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/13/web%E6%94%AF%E6%8C%81cors/">web支持cors</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>场景:</p>
+<pre><code>客户端发出http请求,服务端对客户端的http请求进行验证
+</code></pre>
+<p>问题:</p>
+<pre><code>问题的表象是 从Chrome发出HTTP命令后，Chrome console中报 “Origin null is not allowed by Access-Control-Allow-Origin”错误。
+</code></pre>
+<p>产生原因:</p>
+<pre><code>这是由于Browser的same origin policy 限制的缘故。简单来说，从HTML中发出XMLHttpRequest  请求时，Browser会做检查，如果发现Response中没有Access-Control-Allow-Origin Header或Access-Control-Allow-Origin Header Header的值与 HTML的 orgin 不同时，Browser会拒接绝该Response，Javascript就收不到该Response。 本地HTML的Origin是 null, 而Server端没有发出Access-Control-Allow-Origin Header Header给Browser,  所以会有了“Origin null is not allowed by Access-Control-Allow-Origin”错误。
+
+简单的说,就是由于客户端和服务端处于两个不同的域,相互之间是不允许通信的.
+
+不同的域包含:1.静态文件向服务器请求 2.客户端和服务端域名不同 3.客户端和服务端端口不同 等等,个人理解总结的,不是很准确.
+</code></pre>
+<p>解决办法:</p>
+<pre><code>事实上有一个W3C标准，Cross Origin Resource Sharing (CORS) 专门用来解决这个问题的。目前的主流Browser也有支持。CORS 在HTTP Message 加入几个Header， Browser和 Server可以利用这些Header来判断对方是否是安全，是否可以通信。
+
+http://enable-cors.org/  介绍了目前常用的服务器和技术的支持CORS的办法.其中对与JAVA Web,里面没提到.整理下让Java Web支持的办法.
+</code></pre>
+<p>Java Web支持的办法:</p>
+<pre><code>使用CORS Filter 解决.
+
+下载地址:http://software.dzhuvinov.com/cors-filter.html
+
+使用方法:http://software.dzhuvinov.com/cors-filter-installation.html 
+
+参考文章
+
+http://www.cnblogs.com/LevinJ/archive/2012/04/09/2439670.html
+</code></pre>
+<p>43 Things： CORS<br>BuzzNet： CORS<br>del.icio.us： CORS<br>Flickr： CORS<br>IceRocket： CORS<br>LiveJournal： CORS<br>Technorati： CORS</p>
+<p><a target="_blank" rel="noopener" href="http://blog.163.com/user_zhaopeng/blog/static/16602270820126111524280/">http://blog.163.com/user_zhaopeng/blog/static/16602270820126111524280/</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-pool-english" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -800,74 +883,9 @@
 
 
   
-    <article id="post-android调用系统拍照，不能自动旋转的问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/05/01/android%E8%B0%83%E7%94%A8%E7%B3%BB%E7%BB%9F%E6%8B%8D%E7%85%A7%EF%BC%8C%E4%B8%8D%E8%83%BD%E8%87%AA%E5%8A%A8%E6%97%8B%E8%BD%AC%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-date">
-      <time datetime="2015-05-01T04:07:22.000Z" itemprop="datePublished">2015-05-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/01/android%E8%B0%83%E7%94%A8%E7%B3%BB%E7%BB%9F%E6%8B%8D%E7%85%A7%EF%BC%8C%E4%B8%8D%E8%83%BD%E8%87%AA%E5%8A%A8%E6%97%8B%E8%BD%AC%E7%9A%84%E9%97%AE%E9%A2%98/">世界，你好！</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>Hello World, Hello Blog</p>
-<h2 id="我来啦"><a href="#我来啦" class="headerlink" title="我来啦"></a>我来啦</h2><p>Hello World..</p>
-<p>欢迎来到  ㄣ西石  的博客。</p>
-<ul>
-<li>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%88%91/" rel="tag">我</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/05/01/android%E8%B0%83%E7%94%A8%E7%B3%BB%E7%BB%9F%E6%8B%8D%E7%85%A7%EF%BC%8C%E4%B8%8D%E8%83%BD%E8%87%AA%E5%8A%A8%E6%97%8B%E8%BD%AC%E7%9A%84%E9%97%AE%E9%A2%98/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
     </nav>
   
 </div>

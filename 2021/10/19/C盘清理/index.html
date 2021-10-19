@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>保险拆单校验 | ㄣ西石  ·  博客</title>
+  <title>C盘清理 | ㄣ西石  ·  博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="业务上需要，老范叫加一个拆单校验。规则是这样的： 个险渠道自动核保条件增加一条：若同一投保人、同一被保险人、同样的保险计划，在一周内出现两单及以上，系统自动核保不通过，提示语言为： 疑似拆单，请核保师关注。  由于规则条件较多，刚工作的小姑娘显然搞不了啊。之前由于契约归我做，所以稍微跟她讲了一下思路，oracle自带的列转行函数可以轻松地（bian tai de ）实现一些转换。">
+  <meta name="description" content="方法： ​    1、清理大文件 ​    2、映射 ​    3、磁盘清理（过于easy，不解释） ​    1、C盘文件查找，筛选文件大小（win7+&#x3D;默认支持，第三方工具亦可） ​    C:\Users\henry\AppData ​    Local LocalLow Roaming 删除的软件的文件，Temp可以清理，其他审慎 ​    2、发现了一个TMD大文件 ​        C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="保险拆单校验">
-<meta property="og:url" content="http://yoursite.com/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/index.html">
+<meta property="og:title" content="C盘清理">
+<meta property="og:url" content="http://yoursite.com/2021/10/19/C%E7%9B%98%E6%B8%85%E7%90%86/index.html">
 <meta property="og:site_name" content="ㄣ西石  ·  博客">
-<meta property="og:description" content="业务上需要，老范叫加一个拆单校验。规则是这样的： 个险渠道自动核保条件增加一条：若同一投保人、同一被保险人、同样的保险计划，在一周内出现两单及以上，系统自动核保不通过，提示语言为： 疑似拆单，请核保师关注。  由于规则条件较多，刚工作的小姑娘显然搞不了啊。之前由于契约归我做，所以稍微跟她讲了一下思路，oracle自带的列转行函数可以轻松地（bian tai de ）实现一些转换。">
+<meta property="og:description" content="方法： ​    1、清理大文件 ​    2、映射 ​    3、磁盘清理（过于easy，不解释） ​    1、C盘文件查找，筛选文件大小（win7+&#x3D;默认支持，第三方工具亦可） ​    C:\Users\henry\AppData ​    Local LocalLow Roaming 删除的软件的文件，Temp可以清理，其他审慎 ​    2、发现了一个TMD大文件 ​        C">
 <meta property="og:locale">
-<meta property="article:published_time" content="2016-07-29T09:13:03.000Z">
-<meta property="article:modified_time" content="2016-07-29T09:26:29.804Z">
+<meta property="article:published_time" content="2021-10-19T02:49:18.000Z">
+<meta property="article:modified_time" content="2021-10-19T03:03:41.026Z">
 <meta property="article:author" content="ㄣ西石">
 <meta name="twitter:card" content="summary">
   
@@ -249,11 +249,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-保险拆单校验" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-C盘清理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/" class="article-date">
-      <time datetime="2016-07-29T09:13:03.000Z" itemprop="datePublished">2016-07-29</time>
+      <a href="/2021/10/19/C%E7%9B%98%E6%B8%85%E7%90%86/" class="article-date">
+      <time datetime="2021-10-19T02:49:18.000Z" itemprop="datePublished">2021-10-19</time>
 </a>
     </div>
   
@@ -266,7 +266,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      保险拆单校验
+      C盘清理
     </h1>
   
 
@@ -283,36 +283,25 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>业务上需要，老范叫加一个拆单校验。规则是这样的：</p>
-<p>个险渠道自动核保条件增加一条：<br>若同一投保人、同一被保险人、同样的保险计划，在一周内出现两单及以上，系统自动核保不通过，提示语言为： 疑似拆单，请核保师关注。</p>
-<hr>
-<p>由于规则条件较多，刚工作的小姑娘显然搞不了啊。<br>之前由于契约归我做，所以稍微跟她讲了一下思路，oracle自带的列转行函数可以轻松地（bian tai de ）实现一些转换。</p>
-<ul>
-<li><a id="more"></a>
-no bb ，po代码：</li>
-</ul>
-<p>—本单特征码<br>SELECT 1<br>  FROM (SELECT to_char(WMSYS.WM_CONCAT(a.riskcode)) vv<br>          FROM lcpol a<br>         WHERE a.contno = ‘531010000045735’<br>               and a.cvalidate &gt; sysdate - 7<br>               and not exists (select 1<br>                  from lccont k<br>                 where k.contno = a.contno<br>                   and k.appflag = ‘0’)) a<br> WHERE a.vv in</p>
-<pre><code>   (
-    ----近一周的特征码跟数量
-    SELECT a.vv num
-      FROM (SELECT a.contno, to_char(WMSYS.WM_CONCAT(a.riskcode)) vv
-               FROM lcpol a
-              WHERE 1 = 1
-                and not exists (select 1
-                       from lccont k
-                      where k.contno = a.contno
-                        and k.appflag = &#39;0&#39;)
-                and a.cvalidate &gt; sysdate - 7
-                and a.uwflag not in (&#39;1&#39;, &#39;2&#39;, &#39;a&#39;)
-                and a.salechnl = &#39;02&#39;
-              GROUP BY a.contno) a
-     group by a.vv
-    having count(1) &gt; 1 );
-</code></pre>
-<p> 写完之后，其实思路应该是这样的，这个所谓的思路是根据逆向的一个结果反思出的。</p>
-<p> 其实大部分时间都是在特征码的统计上，于是写出了近一周的特征码跟数量这个sql。写完发现其实这个是保单无关的，也就是只需要知道哪些特征码是不合法的即可，然后让本单的特征码跟这些不合法的比较即可。</p>
-<p> 后续当然可以继续调优啦。比如这一周的特征码，我只关注与本次这个客户的，相信效率不再是问题，即使一个月内的保单也能轻松应付。</p>
-<p> 以上。</p>
+        <p>方法：</p>
+<p>​    1、清理大文件</p>
+<p>​    2、映射</p>
+<p>​    3、磁盘清理（过于easy，不解释）</p>
+<p>​    1、C盘文件查找，筛选文件大小（win7+=默认支持，第三方工具亦可）</p>
+<p>​    C:\Users\henry\AppData</p>
+<p>​    Local LocalLow Roaming 删除的软件的文件，Temp可以清理，其他审慎</p>
+<p>​    2、发现了一个TMD大文件</p>
+<p>​        C:\Recovery\Customizations\USMT.ppkg</p>
+<p>​        这个玩意貌似是什么动态加载啊什么的，搞不清楚</p>
+<p>复制 Installer 目录到 D 盘：</p>
+<p>robocopy “C:WindowsInstaller” “D:WindowsInstaller” /E /COPYALL /XJ</p>
+<p>强制删除 Installer 目录：</p>
+<p>rmdir “C:WindowsInstaller” /S /Q</p>
+<p>创建 C 盘下的 User 的软件链接，链接到 D 盘 User 目录：</p>
+<p>mklink /J “C:RecoveryCustomizations” “D:RecoveryCustomizations”</p>
+<p>usmt.ppkg 处理方法同上！<br>————————————————<br>版权声明：本文为CSDN博主「weixin_39669163」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39669163/article/details/111540657">https://blog.csdn.net/weixin_39669163/article/details/111540657</a>    </p>
+<p>不过后来我一看，这不系统回复用的吗？直接干掉呵呵呵。</p>
+<p>再水一篇    </p>
 
       
     </div>
@@ -321,13 +310,13 @@ no bb ，po代码：</li>
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/">保险拆单校验</a></p>
+        <p><span>本文标题:</span><a href="/2021/10/19/C%E7%9B%98%E6%B8%85%E7%90%86/">C盘清理</a></p>
         <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-        <p><span>发布时间:</span>2016年07月29日 - 17时13分</p>
-        <p><span>最后更新:</span>2016年07月29日 - 17时26分</p>
+        <p><span>发布时间:</span>2021年10月19日 - 10时49分</p>
+        <p><span>最后更新:</span>2021年10月19日 - 11时03分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/" title="保险拆单校验">http://yoursite.com/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2021/10/19/C%E7%9B%98%E6%B8%85%E7%90%86/" title="C盘清理">http://yoursite.com/2021/10/19/C%E7%9B%98%E6%B8%85%E7%90%86/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2021/10/19/C%E7%9B%98%E6%B8%85%E7%90%86/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -340,16 +329,10 @@ no bb ，po代码：</li>
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/05/05/day1/">
-                    day1
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/04/13/web%E6%94%AF%E6%8C%81cors/">
-                    web支持cors
+                <a href="/2021/10/09/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/">
+                    联邦学习
                 </a>
             </div>
         
@@ -422,7 +405,7 @@ no bb ，po代码：</li>
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/07/29/保险拆单校验/" data-title="保险拆单校验" data-url="http://yoursite.com/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/"></div>
+    <div class="ds-thread" data-thread-key="2021/10/19/C盘清理/" data-title="C盘清理" data-url="http://yoursite.com/2021/10/19/C%E7%9B%98%E6%B8%85%E7%90%86/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -446,15 +429,13 @@ no bb ，po代码：</li>
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/05/05/day1/" title="上一篇: day1">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/04/13/web%E6%94%AF%E6%8C%81cors/" title="下一篇: web支持cors">
+            <a href="/2021/10/09/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/" title="下一篇: 联邦学习">
                 <i class="fa fa-angle-right"></i>
             </a>
         
