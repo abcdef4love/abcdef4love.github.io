@@ -3,19 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>oracle函数作为表用 | ㄣ西石  ·  博客</title>
+  <title>TensorFlow | ㄣ西石  ·  博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在开发中遇到一个东西，分享一下： 在oralce中，原先用like 作为标记区分一些关联关系，但是，注意这个但是！终有一日，会有改变。    现在是有逻辑关系的。传入一个机构号码，需要根据逻辑判断的。">
+  <meta name="description" content="reffer：使用 pip 安装 TensorFlow (google.cn) 为方便学习，虚拟机安装。否则win系统极度渴望空间。 创建虚拟环境（推荐）Python 虚拟环境用于将软件包安装与系统隔离开来。 创建一个新的虚拟环境，方法是选择 Python 解释器并创建一个 .&#x2F;venv 目录来存放它： 1python3 -m venv --system-site-packages .&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="oracle函数作为表用">
-<meta property="og:url" content="http://yoursite.com/2016/03/02/oracle%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%A1%A8%E7%94%A8/index.html">
+<meta property="og:title" content="TensorFlow">
+<meta property="og:url" content="http://yoursite.com/2021/12/05/TensorFlow/index.html">
 <meta property="og:site_name" content="ㄣ西石  ·  博客">
-<meta property="og:description" content="在开发中遇到一个东西，分享一下： 在oralce中，原先用like 作为标记区分一些关联关系，但是，注意这个但是！终有一日，会有改变。    现在是有逻辑关系的。传入一个机构号码，需要根据逻辑判断的。">
+<meta property="og:description" content="reffer：使用 pip 安装 TensorFlow (google.cn) 为方便学习，虚拟机安装。否则win系统极度渴望空间。 创建虚拟环境（推荐）Python 虚拟环境用于将软件包安装与系统隔离开来。 创建一个新的虚拟环境，方法是选择 Python 解释器并创建一个 .&#x2F;venv 目录来存放它： 1python3 -m venv --system-site-packages .&#x2F;">
 <meta property="og:locale">
-<meta property="article:published_time" content="2016-03-02T11:00:35.000Z">
-<meta property="article:modified_time" content="2021-02-06T14:35:34.029Z">
+<meta property="article:published_time" content="2021-12-05T12:16:02.000Z">
+<meta property="article:modified_time" content="2021-12-06T13:58:27.589Z">
 <meta property="article:author" content="ㄣ西石">
-<meta property="article:tag" content="oracle 技术">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ㄣ西石  ·  博客" type="application/atom+xml">
@@ -250,11 +249,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-oracle函数作为表用" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-TensorFlow" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/02/oracle%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%A1%A8%E7%94%A8/" class="article-date">
-      <time datetime="2016-03-02T11:00:35.000Z" itemprop="datePublished">2016-03-02</time>
+      <a href="/2021/12/05/TensorFlow/" class="article-date">
+      <time datetime="2021-12-05T12:16:02.000Z" itemprop="datePublished">2021-12-05</time>
 </a>
     </div>
   
@@ -267,7 +266,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      oracle函数作为表用
+      TensorFlow
     </h1>
   
 
@@ -277,10 +276,6 @@
         
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle-%E6%8A%80%E6%9C%AF/" rel="tag">oracle 技术</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -288,39 +283,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>在开发中遇到一个东西，分享一下：</p>
-<p>在oralce中，原先用like 作为标记区分一些关联关系，但是，注意这个但是！终有一日，会有改变。<br>    现在是有逻辑关系的。传入一个机构号码，需要根据逻辑判断的。</p>
-<ul>
-<li><a id="more"></a>
-
-<p>  SO！！！</p>
-<p>  也是弯路不断。</p>
-<p>  开始显示java改，改完后发现配置还是超多呢，总不能写多个sql吧？后来考虑要是case when，写起来也是要死人的。</p>
-<p>  finally：</p>
-<pre><code>      考虑函数或者存储过程，但是存储过程返回的貌似得用游标才能打开，根本不是我想要的结果集啊！
-      
-      
-</code></pre>
-<p>h1 markdown 用的少，试试</p>
-</li>
-</ul>
-<p>create type row_type as object(a varchar2(10));   </p>
-<p>create type table_type as table of row_type; </p>
-<p>create or replace function getDXQ(<br>            a in varchar2<br>        )<br>        return table_type pipelined</p>
-<pre><code>    is
-        v row_type;--定义v为行对象类型
-    begin
-      for thisrow in (select comcode  a from ldcom where comcode like a||&#39;%&#39;  ) loop
-        v := row_type(thisrow.a );
-        pipe row (v);
-      end loop;
-      return;
-    end;
-
-    select * from table(getDXQ(&#39;86&#39;));
-    
-</code></pre>
-<p>h1        nice！！！</p>
+        <p>reffer：<a target="_blank" rel="noopener" href="https://tensorflow.google.cn/install/pip#ubuntu-macos">使用 pip 安装 TensorFlow (google.cn)</a></p>
+<p>为方便学习，虚拟机安装。否则win系统极度渴望空间。</p>
+<h2 id="创建虚拟环境（推荐）"><a href="#创建虚拟环境（推荐）" class="headerlink" title="创建虚拟环境（推荐）"></a>创建虚拟环境（推荐）</h2><p>Python 虚拟环境用于将软件包安装与系统隔离开来。</p>
+<p>创建一个新的虚拟环境，方法是选择 Python 解释器并创建一个 <code>./venv</code> 目录来存放它：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m venv --system-site-packages .&#x2F;venv</span><br></pre></td></tr></table></figure>
+<p>使用特定于 shell 的命令激活该虚拟环境：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source .&#x2F;venv&#x2F;bin&#x2F;activate  # sh, bash, or zsh</span><br></pre></td></tr></table></figure>
+<p>当虚拟环境处于有效状态时，shell 提示符带有 <code>(venv)</code> 前缀。</p>
+<p>在不影响主机系统设置的情况下，在虚拟环境中安装软件包。首先升级 <code>pip</code>：</p>
 
       
     </div>
@@ -329,13 +300,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/03/02/oracle%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%A1%A8%E7%94%A8/">oracle函数作为表用</a></p>
+        <p><span>本文标题:</span><a href="/2021/12/05/TensorFlow/">TensorFlow</a></p>
         <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-        <p><span>发布时间:</span>2016年03月02日 - 19时00分</p>
-        <p><span>最后更新:</span>2021年02月06日 - 22时35分</p>
+        <p><span>发布时间:</span>2021年12月05日 - 20时16分</p>
+        <p><span>最后更新:</span>2021年12月06日 - 21时58分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/02/oracle%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%A1%A8%E7%94%A8/" title="oracle函数作为表用">http://yoursite.com/2016/03/02/oracle%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%A1%A8%E7%94%A8/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/03/02/oracle%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%A1%A8%E7%94%A8/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2021/12/05/TensorFlow/" title="TensorFlow">http://yoursite.com/2021/12/05/TensorFlow/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2021/12/05/TensorFlow/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -348,16 +319,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/03/17/%E5%84%BF%E6%97%B6%E7%9A%84%E5%A4%8F%E5%A4%A9/">
-                    儿时的夏天
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2015/06/18/hexo%E5%91%BD%E4%BB%A4/">
-                    hexo命令
+                <a href="/2021/12/04/Linux%E5%AE%89%E8%A3%85MySQL/">
+                    Linux安装MySQL
                 </a>
             </div>
         
@@ -368,7 +333,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">创建虚拟环境（推荐）</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -430,7 +395,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/02/oracle函数作为表用/" data-title="oracle函数作为表用" data-url="http://yoursite.com/2016/03/02/oracle%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%A1%A8%E7%94%A8/"></div>
+    <div class="ds-thread" data-thread-key="2021/12/05/TensorFlow/" data-title="TensorFlow" data-url="http://yoursite.com/2021/12/05/TensorFlow/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -454,15 +419,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/17/%E5%84%BF%E6%97%B6%E7%9A%84%E5%A4%8F%E5%A4%A9/" title="上一篇: 儿时的夏天">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2015/06/18/hexo%E5%91%BD%E4%BB%A4/" title="下一篇: hexo命令">
+            <a href="/2021/12/04/Linux%E5%AE%89%E8%A3%85MySQL/" title="下一篇: Linux安装MySQL">
                 <i class="fa fa-angle-right"></i>
             </a>
         
