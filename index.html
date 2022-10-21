@@ -254,6 +254,259 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-node-js：setTimeout实现同步delay延时函数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/10/21/node-js%EF%BC%9AsetTimeout%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%AD%A5delay%E5%BB%B6%E6%97%B6%E5%87%BD%E6%95%B0/" class="article-date">
+      <time datetime="2022-10-21T07:02:08.000Z" itemprop="datePublished">2022-10-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/10/21/node-js%EF%BC%9AsetTimeout%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%AD%A5delay%E5%BB%B6%E6%97%B6%E5%87%BD%E6%95%B0/">node.js：setTimeout实现同步delay延时函数</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>async function delay(time) {<br>  return new Promise((resolve, reject) =&gt; {<br>    setTimeout(() =&gt; {<br>      resolve();<br>    }, time);<br>  });<br>}</p>
+<p>// 示例：延迟1秒 输出<br>(async () =&gt; {<br>  await delay(1000);<br>  console.log(“hello!”);<br>})();</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-QingLong-tips" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/08/10/QingLong-tips/" class="article-date">
+      <time datetime="2022-08-10T09:44:01.000Z" itemprop="datePublished">2022-08-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/10/QingLong-tips/">QingLong-tips</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>方法一： 在SSH里执行安装青龙面板的命令：<br>wget -q <a target="_blank" rel="noopener" href="https://raw.githubusercontents.com/shufflewzc/VIP/main/Scripts/sh/ql.sh">https://raw.githubusercontents.com/shufflewzc/VIP/main/Scripts/sh/ql.sh</a> -O ql.sh &amp;&amp; bash ql.sh</p>
+<p>方法二：<br>安装docker<br>已经安装Docker的可以跳过这一步，没有安装的可以使用以下脚本命令直接安装Docker。<br>curl -fsSL <a target="_blank" rel="noopener" href="https://get.docker.com/">https://get.docker.com</a> | bash -s docker –mirror Aliyun<br>安装Docker后记得启动Docker，并配置开机启动</p>
+<p>sudo systemctl start docker  #启动Docker<br>sudo systemctl enable docker #配置开机自启</p>
+<p>拉取镜像<br>docker pull whyour/qinglong:latest</p>
+<p>部署镜像<br>docker run -dit <br>-v $PWD/ql/config:/ql/config <br>-v $PWD/ql/log:/ql/log <br>-v $PWD/ql/db:/ql/db <br>-p 5700:5700 <br>–name qinglong <br>–hostname qinglong <br>–restart always <br>whyour/qinglong:latest</p>
+<p>打开防火墙<br>青龙面面板通过网页访问，走的是5700端口，记得在服务器防火墙设置中放行5700端口</p>
+<p>登录青龙面板<br>面板地址：http://服务器IP:5700<br>默认账号：admin<br>默认密码：adminadmin<br>当您使用以上密码首次登录后，面板会显示已初始化密码。请在SSH终端内查看新密码（输出的结果就是实际的密码了{“username”:“admin”,“password”:””），查看代码如<br>docker exec -it qinglong cat /ql/config/auth.json</p>
+<p>青龙面板基础命令<br>#更新青龙<br>docker exec -it qinglong ql update</p>
+<p>#更新青龙并编译<br>docker exec -it qinglong ql restart</p>
+<p>#拉取自定义仓库<br>docker exec -it qinglong ql repo <a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/whyour/hundun.git">https://ghproxy.com/https://github.com/whyour/hundun.git</a> “quanx” “tokens|caiyun|didi|donate|fold|Env”</p>
+<p>#拉取单个脚本<br>docker exec -it qinglong ql raw <a target="_blank" rel="noopener" href="https://ghproxy.com/https://raw.githubusercontent.com/moposmall/Script/main/Me/jx_cfd.js">https://ghproxy.com/https://raw.githubusercontent.com/moposmall/Script/main/Me/jx_cfd.js</a></p>
+<p>#删除7天前的所有日志<br>docker exec -it qinglong ql rmlog 7</p>
+<p>#启动bot<br>docker exec -it qinglong ql bot</p>
+<p>#导出互助码<br>docker exec -it qinglong ql code</p>
+<p>#通知测试<br>docker exec -it qinglong notify test test</p>
+<p>#立即执行脚本<br>docker exec -it qinglong task test.js now</p>
+<p>#并行执行脚本<br>docker exec -it qinglong task test.js conc</p>
+<p>拉取各种库的脚本如下<br>【Faker集合仓库】<br>ql repo <a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/shufflewzc/faker2.git">https://ghproxy.com/https://github.com/shufflewzc/faker2.git</a> “jd_|jx_|getJDCookie” “activity|backUp” “^jd[^<em>]|USER|ZooFaker_Necklace”<br>【curtinlv仓库】<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/curtinlv/JD-Script.git">https://github.com/curtinlv/JD-Script.git</a><br>【star】<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/star261/jd.git">https://github.com/star261/jd.git</a> “scripts” “code”<br>【怨念集合仓库】<br>ql repo <a target="_blank" rel="noopener" href="https://hub.fastgit.org/yuannian1112/jd_scripts.git">https://hub.fastgit.org/yuannian1112/jd_scripts.git</a> “jd</em>|jx_|getJDCookie” “activity|backUp” “^jd[^<em>]|USER|utils”<br>【ddo（hyzaw）】<br>ql repo <a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/shufflewzc/hyzaw.git">https://ghproxy.com/https://github.com/shufflewzc/hyzaw.git</a> “ddo</em>“<br>【柠檬（胖虎）】<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/panghu999/panghu.git">https://github.com/panghu999/panghu.git</a> “jd_”<br>【温某某】<br>ql repo <a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/shufflewzc/Wenmoux.git">https://ghproxy.com/https://github.com/shufflewzc/Wenmoux.git</a><br>【混沌】<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/whyour/hundun.git">https://github.com/whyour/hundun.git</a> “quanx” “tokens|caiyun|didi|donate|fold|Env”<br>【龙珠】<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/whyour/hundun.git">https://github.com/whyour/hundun.git</a> “quanx” “tokens|caiyun|didi|donate|fold|Env”</p>
+<p>————————————–分割线————————————————</p>
+<p>推荐使用下方库(更新拉库命令)<br>拉库命令：<br>国内鸡：<br>ql repo <a target="_blank" rel="noopener" href="https://ghproxy.com/github.com/KingRan/JDJB.git">https://ghproxy.com/github.com/KingRan/JDJB.git</a> “jd_|jx_|jdCookie” “activity|backUp” “^jd[^<em>]|USER|utils|function|sign|sendNotify|ql|JDJR”<br>国外鸡：<br>ql repo ql repo <a target="_blank" rel="noopener" href="https://github.com/KingRan/JDJB.git">https://github.com/KingRan/JDJB.git</a> “jd</em>|jx_|jdCookie” “activity|backUp” “^jd[^_]|USER|utils|function|sign|sendNotify|ql|JDJR”<br>ccwav大佬的资产通知增强版和CK检测</p>
+<p>2.10.3之前版本青龙拉库命令:</p>
+<p>不包含sendNotify:</p>
+<p>ql repo <a target="_blank" rel="noopener" href="https://github.com/ccwav/QLScript2.git">https://github.com/ccwav/QLScript2.git</a> “jd_” “NoUsed” “ql|utils”</p>
+<p>包含sendNotify:</p>
+<p>ql repo <a target="_blank" rel="noopener" href="https://github.com/ccwav/QLScript2.git">https://github.com/ccwav/QLScript2.git</a> “jd_” “NoUsed” “ql|sendNotify|utils”</p>
+<p>2.10.3之后版本青龙拉库命令:</p>
+<p>不包含sendNotify:</p>
+<p>ql repo <a target="_blank" rel="noopener" href="https://github.com/ccwav/QLScript2.git">https://github.com/ccwav/QLScript2.git</a> “jd_” “NoUsed” “ql|utils|USER_AGENTS|jdCookie|JS_USER_AGENTS”</p>
+<p>包含sendNotify:</p>
+<p>ql repo <a target="_blank" rel="noopener" href="https://github.com/ccwav/QLScript2.git">https://github.com/ccwav/QLScript2.git</a> “jd_” “NoUsed” “ql|sendNotify|utils|USER_AGENTS|jdCookie|JS_USER_AGENTS”<br>carry库（老年人内部互助库）<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/cdle/carry.git">https://github.com/cdle/carry.git</a> “jd_|jx_” “” “^jd[^_]|USER|share”</p>
+<p>冲鸭库：购物车抽奖、开卡库(2021.12.28更新)<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/mmnvnmm/omo.git">https://github.com/mmnvnmm/omo.git</a> “jd_” “NoUsed” “ql|sendNotify|utils|USER_AGENTS|jdCookie|JS_USER_AGENTS”</p>
+<p>小手冰凉 自用库（青龙2.10.3之前可拉）<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/chianPLA/xiaoshou.git">https://github.com/chianPLA/xiaoshou.git</a></p>
+<p>smiek2121开卡库：更新地址<br>国外鸡：<br>ql repo ql repo <a target="_blank" rel="noopener" href="https://github.com/smiek2121/scripts.git">https://github.com/smiek2121/scripts.git</a> “jd_|gua_” “” “ZooFaker_Necklace.js|JDJRValidator_Pure.js|sign_graphics_validate.js|cleancart_activity.js|jdCookie.js|sendNotify.js”</p>
+<p>wskey转换来源于Zy143L大佬（不上传，推荐）<br>完美网络用户：ql repo <a target="_blank" rel="noopener" href="https://github.com/Zy143L/wskey.git">https://github.com/Zy143L/wskey.git</a> “wskey”</p>
+<p>国内网络用户：ql repo <a target="_blank" rel="noopener" href="https://ghproxy.com/github.com/Zy143L/wskey.git">https://ghproxy.com/github.com/Zy143L/wskey.git</a> “wskey”</p>
+<p>京东保价、汽车兑换等<br>国内鸡<br>ql repo <a target="_blank" rel="noopener" href="https://ghproxy.com/github.com/KingRan/JD-Scripts.git">https://ghproxy.com/github.com/KingRan/JD-Scripts.git</a> “jd_|jx_|jdCookie” “activity|backUp” “^jd[^_]|USER|utils|function|sign|sendNotify|ql”</p>
+<p>国外鸡<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/KingRan/JD-Scripts.git">https://github.com/KingRan/JD-Scripts.git</a> “jd_|jx_|jdCookie” “activity|backUp” “^jd[^_]|USER|utils|function|sign|sendNotify|ql”</p>
+<h2 id="zero205大佬更新拉库命令"><a href="#zero205大佬更新拉库命令" class="headerlink" title="zero205大佬更新拉库命令"></a>zero205大佬更新拉库命令</h2><p>ql repo <a target="_blank" rel="noopener" href="https://github.com/zero205/JD_tencent_scf.git">https://github.com/zero205/JD_tencent_scf.git</a> “jd_|jx_|getJDCookie” “backUp|icon” “^jd[^_]|USER|sendNotify|sign_graphics_validate|JDJR””main”</p>
+<h2 id="star261"><a href="#star261" class="headerlink" title="star261"></a>star261</h2><p>ql repo <a target="_blank" rel="noopener" href="https://github.com/star261/jd.git">https://github.com/star261/jd.git</a> “scripts|jd” “” “” “main”</p>
+<h2 id="chinnkarahoi-无维护，原版"><a href="#chinnkarahoi-无维护，原版" class="headerlink" title="chinnkarahoi 无维护，原版"></a>chinnkarahoi 无维护，原版</h2><p>ql repo <a target="_blank" rel="noopener" href="https://github.com/chinnkarahoi/jd_scripts.git">https://github.com/chinnkarahoi/jd_scripts.git</a> “jd_|jx_|getJDCookie” “activity|backUp|Coupon” “^jd[^_]|USER”</p>
+<h2 id="JDHelloWorld-基本天天有更新-但是采用TS脚本让初学者不友好"><a href="#JDHelloWorld-基本天天有更新-但是采用TS脚本让初学者不友好" class="headerlink" title="JDHelloWorld 基本天天有更新,但是采用TS脚本让初学者不友好"></a>JDHelloWorld 基本天天有更新,但是采用TS脚本让初学者不友好</h2><p>ql repo <a target="_blank" rel="noopener" href="https://github.com/JDHelloWorld/jd_scripts.git">https://github.com/JDHelloWorld/jd_scripts.git</a> “jd_|jx_|getCookie” “activity|backUp|Coupon|enen|update” “^jd[^<em>]|USER|tools”<br>##柠檬panghu 已经跑路<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/panghu999/jd_scripts.git">https://github.com/panghu999/jd_scripts.git</a> “jd_|jx</em>|getJDCookie” “activity|backUp|jd_delCoupon|format_” “^jd[^_]|USER”</p>
+<h2 id="he1pu-有更新"><a href="#he1pu-有更新" class="headerlink" title="he1pu 有更新"></a>he1pu 有更新</h2><p>ql repo <a target="_blank" rel="noopener" href="https://github.com/he1pu/JDHelp.git">https://github.com/he1pu/JDHelp.git</a> “jd_|jx_|getJDCookie” “activity|backUp|jd_delCoupon” “^jd[^_]|USER”</p>
+<h2 id="shufflewzc-集合目前能用的脚本有更新"><a href="#shufflewzc-集合目前能用的脚本有更新" class="headerlink" title="shufflewzc 集合目前能用的脚本有更新"></a>shufflewzc 集合目前能用的脚本有更新</h2><p>ql repo <a target="_blank" rel="noopener" href="https://github.com/shufflewzc/faker2.git">https://github.com/shufflewzc/faker2.git</a> “jd_|jx_|jddj_|getJDCookie” “activity|backUp” “^jd[^<em>]|USER|ZooFaker_Necklace|JDJRValidator_Pure|sign_graphics_validate”<br>##Annyoo2021 lxk最终版及搬运整理 集合目前能用的脚本 推荐<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/Annyoo2021/scripts.git">https://github.com/Annyoo2021/scripts.git</a> “jd</em>|jx_|long_|getJDCookie” “activity|backUp” “^jd[^_]|USER|ZooFaker_Necklace|JDJRValidator_Pure|JDJRValidator” “main”</p>
+<h2 id="yuannian1112拉取仓库命令：-不推荐"><a href="#yuannian1112拉取仓库命令：-不推荐" class="headerlink" title="yuannian1112拉取仓库命令： 不推荐"></a>yuannian1112拉取仓库命令： 不推荐</h2><p>国内鸡<br>ql repo <a target="_blank" rel="noopener" href="https://hub.fastgit.org/yuannian1112/jd_scripts.git">https://hub.fastgit.org/yuannian1112/jd_scripts.git</a> “jd_|jx_|getJDCookie” “activity|backUp” “^jd[^<em>]|USER|utils”<br>国外鸡<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/yuannian1112/jd_scripts.git">https://github.com/yuannian1112/jd_scripts.git</a> “jd_|jx</em>|getJDCookie” “activity|backUp” “^jd[^_]|USER|utils”<br>v4修改默认库为<br><a target="_blank" rel="noopener" href="https://hub.fastgit.org/yuannian1112/jd_scripts.git">https://hub.fastgit.org/yuannian1112/jd_scripts.git</a><br>分支修改为main</p>
+<p>Tsukasa007仓库<br><a target="_blank" rel="noopener" href="https://github.com/Tsukasa007/my_script/tree/master">https://github.com/Tsukasa007/my_script/tree/master</a></p>
+<p>同步上游各个大佬的仓库 相当于合集<br><a target="_blank" rel="noopener" href="https://github.com/DovFork">https://github.com/DovFork</a><br>更新7.7最新仓库：（仅提供地址，拉取请参照下面）</p>
+<p>Annyoo2021仓库 基本天天更新，集合了大量可用脚本<br><a target="_blank" rel="noopener" href="https://github.com/Annyoo2021/scripts">https://github.com/Annyoo2021/scripts</a></p>
+<p>lukesyy仓库<br><a target="_blank" rel="noopener" href="https://github.com/lukesyy/jd_yun">https://github.com/lukesyy/jd_yun</a></p>
+<p>zero205仓库<br><a target="_blank" rel="noopener" href="https://github.com/zero205/JD_tencent_scf">https://github.com/zero205/JD_tencent_scf</a><br>curtinlv仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/curtinlv/JD-Script.git">https://github.com/curtinlv/JD-Script.git</a></p>
+<p>he1pu互助仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/he1pu/JDHelp.git">https://github.com/he1pu/JDHelp.git</a> “jd_|jx_|getJDCookie” “activity|backUp|Coupon” “^jd[^_]|USER”</p>
+<p>柠檬（胖虎）代维护lxk0301仓库 已经跑路<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/panghu999/jd_scripts.git">https://github.com/panghu999/jd_scripts.git</a> “jd_|jx_|getJDCookie” “activity|backUp|Coupon|jd_try|format_” “^jd[^_]|USER”</p>
+<p>zcy01仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/ZCY01/daily_scripts.git">https://github.com/ZCY01/daily_scripts.git</a> “jd_”</p>
+<p>passerby-b 仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/passerby-b/JDDJ.git">https://github.com/passerby-b/JDDJ.git</a> “jddj_” “scf_test_event|jddj_fruit_code.js|jddj_getck.js|jd_|jddj_cookie”</p>
+<p>JDHelloWorld仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/JDHelloWorld/jd_scripts.git">https://github.com/JDHelloWorld/jd_scripts.git</a> “jd_|jx_|getJDCookie” “activity|backUp|Coupon|enen|update” “^jd[^_]|USER”</p>
+<p>jiulan仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/jiulan/platypus.git">https://github.com/jiulan/platypus.git</a></p>
+<p>Ariszy（Zhiyi-N）仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/Ariszy/Private-Script.git">https://github.com/Ariszy/Private-Script.git</a> “JD”</p>
+<p>柠檬（胖虎）仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/panghu999/panghu.git">https://github.com/panghu999/panghu.git</a> “jd_”</p>
+<p>混沌仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/whyour/hundun.git">https://github.com/whyour/hundun.git</a> “quanx” “tokens|caiyun|didi|donate|fold|Env|.py”</p>
+<p>moposmall仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/moposmall/Script.git">https://github.com/moposmall/Script.git</a> “jx_mc|cfd.js”</p>
+<p>龙珠仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/longzhuzhu/nianyu.git">https://github.com/longzhuzhu/nianyu.git</a> “qx” “main”<br>更新青龙<br>docker exec -it qinglong ql update<br>更新青龙并编译<br>docker exec -it qinglong ql check<br>启动bot<br>docker exec -it qinglong ql check<br>删除7天前的所有日志<br>docker exec -it qinglong ql rmlog 7<br>通知测试<br>docker exec -it qinglong notify test test<br>立即执行脚本<br>docker exec -it qinglong task test.js now<br>并行执行脚本<br>docker exec -it qinglong task test.js conc</p>
+<p>————————————–分割线————————————————</p>
+<p>手机号直接获取cookie，NVJDC面板对接青龙面板<br>开始搭建<br>1.1版本安装<br>可以和青龙面板试用同一服务器搭建，如果要更换其他服务器需要重新配置Docker</p>
+<p>一键脚本<br>bash &lt;(curl -sL <a target="_blank" rel="noopener" href="https://git.io/JMWTL">https://git.io/JMWTL</a>)<br>选择：1</p>
+<p>请输入青龙服务器在web页面中显示的名称: 【自定义】</p>
+<p>请输入nvjdc面板标题: 【自定义】</p>
+<p>请输入nvjdc面板希望使用的端口号: 【自定义】</p>
+<p>请输入XDD面板地址，格式如<a target="_blank" rel="noopener" href="http://192.168.2.2:6666/api/login/smslogin">http://192.168.2.2:6666/api/login/smslogin</a> 如不启用直接回车:【直接回车】</p>
+<p>请输入XDD面板Token（如不启用直接回车）:【直接回车】</p>
+<p>nvjdc是否对接青龙，输入y或者n【y】</p>
+<p>请输入青龙OpenApi Client ID: 【青龙面板查找】</p>
+<p>请输入青龙OpenApi Client Secret: 【青龙面板查找】</p>
+<p>请输入青龙服务器的url地址（类似<a href="http://192.168.2.2:5700）:【你的青龙面板http://ip：端口】">http://192.168.2.2:5700）:【你的青龙面板http://ip：端口】</a></p>
+<p>请输入自动滑块次数 直接回车默认5次后手动滑块 输入0为默认手动滑块: 【5】</p>
+<p>新版本安装<br>如果代码失效请移步：<a target="_blank" rel="noopener" href="https://github.com/King-stark/NvJDCloud">https://github.com/King-stark/NvJDCloud</a></p>
+<p>1、拉源码<br>国外机:git clone -b main <a target="_blank" rel="noopener" href="https://github.com/King-stark/NvJDCloud.git">https://github.com/King-stark/NvJDCloud.git</a> ~/nvjdc<br>国内机:git clone -b main <a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/King-stark/NvJDCloud.git">https://ghproxy.com/https://github.com/King-stark/NvJDCloud.git</a> ~/nvjdc</p>
+<p>2 、拉取基础镜像<br>docker pull nolanhzy/nvjdc:latest</p>
+<p>3 、安装unzip，如果已安装unzip可忽略<br>centos:yum install wget unzip -y<br>Ubuntu/Debian:apt-get install wget unzip -y</p>
+<p>4、创建一个目录放配置<br>1、cd nvjdc<br>2、mkdir -p Config &amp;&amp; cd Config</p>
+<p>5、下载Config.json 配置文件 并且修改自己的配置 不能缺少<br>国外机：wget -O Config.json <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/King-stark/NvJDCloud/doc/Config.json">https://raw.githubusercontent.com/King-stark/NvJDCloud/doc/Config.json</a><br>国内机:wget -O Config.json <a target="_blank" rel="noopener" href="https://ghproxy.com/https://raw.githubusercontent.com/King-stark/NvJDCloud/doc/Config.json">https://ghproxy.com/https://raw.githubusercontent.com/King-stark/NvJDCloud/doc/Config.json</a></p>
+<p>把必要的Config参数改好（url，ID，Secret）</p>
+<p>{<br>///最大支持几个网页<br>“MaxTab”: “4”,<br>//网站标题<br>“Title”: “NVJDC”,<br>//网站公告<br>“Announcement”: “本项目脚本收集于互联网，为了您的财产安全，请关闭京东免密支付。”,<br>//滑块次数，0为手动<br>“AutoCaptchaCount”: “0”,<br>///多青龙配置<br>“Config”: [<br>{<br>//序号必须从1开始<br>“QLkey”: 1,<br>//服务器名称<br>“QLName”: “阿里云”,<br>//青龙url<br>“QLurl”: “”,<br>//青龙2,9 OpenApi Client ID<br>“QL_CLIENTID”: “”,<br>//青龙2,9 OpenApi Client Secret<br>“QL_SECRET”: “”,<br>//青龙面包最大ck容量<br>“QL_CAPACITY”: 25,<br>//消息推送二维码链接<br>“QLkey”: 2,<br>},<br>]<br>}</p>
+<p>6 、安装浏览器<br>回到nvjdc目录创建chromium文件夹并进入<br>cd ~/nvjdc &amp;&amp; mkdir -p .local-chromium/Linux-884014 &amp;&amp; cd .local-chromium/Linux-884014</p>
+<p>7、下载 chromium并解压<br>wget <a target="_blank" rel="noopener" href="http://npm.taobao.org/mirrors/chromium-browser-snapshots/Linux_x64/884014/chrome-linux.zip">http://npm.taobao.org/mirrors/chromium-browser-snapshots/Linux_x64/884014/chrome-linux.zip</a> &amp;&amp; unzip chrome-linux.zip<br>此时应检查chrome-linux.zip 文件是否解压成功，如为解压重新执行解压命令<br>unzip chrome-linux.zip</p>
+<p>8、删除刚刚下载的压缩包<br>rm -f chrome-linux.zip</p>
+<p>9、回到刚刚创建的目录<br>cd ~/nvjdc<br>10、启动镜像</p>
+<p>docker run –name nvjdc -p 5701:80 -d -v “$(pwd)”:/app <br>-v /etc/localtime:/etc/localtime:ro <br>-it –privileged=true nolanhzy/nvjdc:latest</p>
+<p>搭建完成</p>
+<p>NVJDC端口5701。输入ip:5701 即可打开使用了</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-pipinstall失败问题解决" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/02/08/pipinstall%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="article-date">
+      <time datetime="2022-02-08T01:34:34.000Z" itemprop="datePublished">2022-02-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/08/pipinstall%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">pipinstall失败问题解决</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>结果error: Microsoft Visual C++ 14.0 or greater is required. Get it with “Microsoft C++ Build Tools”: <a target="_blank" rel="noopener" href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">https://visualstudio.microsoft.com/visual-cpp-build-tools/</a></p>
+<p>虽然网上有别人提高的办法。如安装证书，或者从Internet下载。参考链接<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_15158911/article/details/107887490">https://blog.csdn.net/qq_15158911/article/details/107887490</a></p>
+<p>然而我的都不可以。</p>
+<p>我上网搜一下Microsoft C++ Build Tools。找到<a target="_blank" rel="noopener" href="https://visualstudio.microsoft.com/zh-hant/visual-cpp-build-tools/%E3%80%82">https://visualstudio.microsoft.com/zh-hant/visual-cpp-build-tools/。</a></p>
+<p>这里有C++的编译器。想着会不会这样安装也可以。本着死马当活马医。下载了vs_buildtools</p>
+<p>感动。终于可以了。</p>
+<p>————————————————<br>版权声明：本文为CSDN博主「fartisan」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/vans05/article/details/116994443">https://blog.csdn.net/vans05/article/details/116994443</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-TensorFlow" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -290,6 +543,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source .&#x2F;venv&#x2F;bin&#x2F;activate  # sh, bash, or zsh</span><br></pre></td></tr></table></figure>
 <p>当虚拟环境处于有效状态时，shell 提示符带有 <code>(venv)</code> 前缀。</p>
 <p>在不影响主机系统设置的情况下，在虚拟环境中安装软件包。首先升级 <code>pip</code>：</p>
+<h3 id="切换到新的环境"><a href="#切换到新的环境" class="headerlink" title="切换到新的环境"></a>切换到新的环境</h3><p>界面切换方法：</p>
+<blockquote>
+<blockquote>
+<p>启动<code>Anaconda Navigator</code>-&gt;点击<code>Enviorments</code>-&gt;点击新建的环境-&gt;单击小箭头-&gt; 选择<code>Open Terninal</code></p>
+</blockquote>
+</blockquote>
+<p>命令行切换方法:</p>
+<p>1.查看已有环境：<code>conda info -e</code>（注意<code>*</code>代表当前选择的环境）</p>
+<p>2.切换环境：<code>conda activate $环境名</code><br>3.取消环境：<code>conda deactivate</code></p>
+<p>conda activate  tensorflow2.0</p>
 
       
     </div>
@@ -447,7 +710,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h1 id="旧闻一则：神秘的0x5f3759df-不可思议的Quake-III源码"><a href="#旧闻一则：神秘的0x5f3759df-不可思议的Quake-III源码" class="headerlink" title="旧闻一则：神秘的0x5f3759df 不可思议的Quake III源码"></a>旧闻一则：神秘的0x5f3759df 不可思议的Quake III源码</h1><ul>
+              <h1 id="旧闻一则：神秘的0x5f3759df-不可思议的Quake-III源码"><a href="#旧闻一则：神秘的0x5f3759df-不可思议的Quake-III源码" class="headerlink" title="旧闻一则：神秘的0x5f3759df 不可思议的Quake III源码"></a>旧闻一则：神秘的0x5f3759df 不可思议的Quake III源码</h1><p><a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/6f30af88cc22bcd126ff0ce4.html">https://wenku.baidu.com/view/6f30af88cc22bcd126ff0ce4.html</a></p>
+<ul>
 <li>
           
       
@@ -683,178 +947,6 @@
 
 
   
-    <article id="post-鸿蒙Theme设置" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/02/06/%E9%B8%BF%E8%92%99Theme%E8%AE%BE%E7%BD%AE/" class="article-date">
-      <time datetime="2021-02-06T15:03:00.000Z" itemprop="datePublished">2021-02-06</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/02/06/%E9%B8%BF%E8%92%99Theme%E8%AE%BE%E7%BD%AE/">鸿蒙Theme设置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>方法一：在config.json的aiblities下新增主题样式<br>“metaData”: {<br>  “customizeData”: [<br>    {<br>      “name”: “hwc-theme”,<br>      “value”: “androidhwext:style/Theme.Emui.NoTitleBar”<br>    }<br>  ]<br>}</p>
-<ul>
-<li>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a  href="/2021/02/06/%E9%B8%BF%E8%92%99Theme%E8%AE%BE%E7%BD%AE/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-李美丽在打扫卫生" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/02/06/%E6%9D%8E%E7%BE%8E%E4%B8%BD%E5%9C%A8%E6%89%93%E6%89%AB%E5%8D%AB%E7%94%9F/" class="article-date">
-      <time datetime="2021-02-06T14:58:25.000Z" itemprop="datePublished">2021-02-06</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/02/06/%E6%9D%8E%E7%BE%8E%E4%B8%BD%E5%9C%A8%E6%89%93%E6%89%AB%E5%8D%AB%E7%94%9F/">李美丽在打扫卫生</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>真麻烦</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-鸿蒙小汽车" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/02/06/%E9%B8%BF%E8%92%99%E5%B0%8F%E6%B1%BD%E8%BD%A6/" class="article-date">
-      <time datetime="2021-02-06T14:39:02.000Z" itemprop="datePublished">2021-02-06</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/02/06/%E9%B8%BF%E8%92%99%E5%B0%8F%E6%B1%BD%E8%BD%A6/">鸿蒙小汽车</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>今天组装鸿蒙小汽车</p>
-<p>具体功能有;<br>1、避障模式（超声波避障）<br>2、循迹模式</p>
-<p>可惜超声波避障无效，循迹暂时无法触发。</p>
-<p>申请找莹姐换一个，不知道给不给换。。。。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%B8%BF%E8%92%99/" rel="tag">鸿蒙</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -865,7 +957,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2021 ㄣ西石
+                &copy; 2022 ㄣ西石
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE

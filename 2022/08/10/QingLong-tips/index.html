@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>QingLong-tips | ㄣ西石  ·  博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="方法一： 在SSH里执行安装青龙面板的命令：wget -q https:&#x2F;&#x2F;raw.githubusercontents.com&#x2F;shufflewzc&#x2F;VIP&#x2F;main&#x2F;Scripts&#x2F;sh&#x2F;ql.sh -O ql.sh &amp;&amp; bash ql.sh 方法二：安装docker已经安装Docker的可以跳过这一步，没有安装的可以使用以下脚本命令直接安装Docker。curl -fsSL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QingLong-tips">
+<meta property="og:url" content="http://yoursite.com/2022/08/10/QingLong-tips/index.html">
+<meta property="og:site_name" content="ㄣ西石  ·  博客">
+<meta property="og:description" content="方法一： 在SSH里执行安装青龙面板的命令：wget -q https:&#x2F;&#x2F;raw.githubusercontents.com&#x2F;shufflewzc&#x2F;VIP&#x2F;main&#x2F;Scripts&#x2F;sh&#x2F;ql.sh -O ql.sh &amp;&amp; bash ql.sh 方法二：安装docker已经安装Docker的可以跳过这一步，没有安装的可以使用以下脚本命令直接安装Docker。curl -fsSL">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-08-10T09:44:01.000Z">
+<meta property="article:modified_time" content="2022-08-10T09:46:01.245Z">
+<meta property="article:author" content="ㄣ西石">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="ㄣ西石  ·  博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+      
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+      <link href="//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css" rel="stylesheet">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+  
+<script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/litten.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:abcdef4love@qq.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/abcdef4love/" title="GitHub"></a></li>
+                            
+                                <li id="V2EX"><a class="V2EX" target="_blank" href="http://www.v2ex.com/member/abcdef4love" title="V2EX"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/oracle-%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">oracle 技术</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E6%88%91/" style="font-size: 20px;">我</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="/tags/%E6%A2%A6/" style="font-size: 10px;">梦</a> <a href="/tags/%E7%A7%91%E5%AD%A6%E5%8F%B2%E8%AF%9D/" style="font-size: 10px;">科学史话</a> <a href="/tags/%E9%B8%BF%E8%92%99/" style="font-size: 10px;">鸿蒙</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://abcdef4love.github.io/">奥巴马的博客</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://abcdef4love.github.io/">卡卡的美丽传说</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://abcdef4love.github.io/">本泽马的博客</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://abcdef4love.github.io/">吉格斯的博客</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://abcdef4love.github.io/">习大大大不同</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://abcdef4love.github.io/">托蒂的博客</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/litten.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:abcdef4love@qq.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/abcdef4love/" title="GitHub"></a></li>
+                            
+                                <li id="V2EX"><a class="V2EX" target="_blank" href="http://www.v2ex.com/member/abcdef4love" title="V2EX"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-QingLong-tips" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/08/10/QingLong-tips/" class="article-date">
+      <time datetime="2022-08-10T09:44:01.000Z" itemprop="datePublished">2022-08-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      QingLong-tips
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>方法一： 在SSH里执行安装青龙面板的命令：<br>wget -q <a target="_blank" rel="noopener" href="https://raw.githubusercontents.com/shufflewzc/VIP/main/Scripts/sh/ql.sh">https://raw.githubusercontents.com/shufflewzc/VIP/main/Scripts/sh/ql.sh</a> -O ql.sh &amp;&amp; bash ql.sh</p>
+<p>方法二：<br>安装docker<br>已经安装Docker的可以跳过这一步，没有安装的可以使用以下脚本命令直接安装Docker。<br>curl -fsSL <a target="_blank" rel="noopener" href="https://get.docker.com/">https://get.docker.com</a> | bash -s docker –mirror Aliyun<br>安装Docker后记得启动Docker，并配置开机启动</p>
+<p>sudo systemctl start docker  #启动Docker<br>sudo systemctl enable docker #配置开机自启</p>
+<p>拉取镜像<br>docker pull whyour/qinglong:latest</p>
+<p>部署镜像<br>docker run -dit <br>-v $PWD/ql/config:/ql/config <br>-v $PWD/ql/log:/ql/log <br>-v $PWD/ql/db:/ql/db <br>-p 5700:5700 <br>–name qinglong <br>–hostname qinglong <br>–restart always <br>whyour/qinglong:latest</p>
+<p>打开防火墙<br>青龙面面板通过网页访问，走的是5700端口，记得在服务器防火墙设置中放行5700端口</p>
+<p>登录青龙面板<br>面板地址：http://服务器IP:5700<br>默认账号：admin<br>默认密码：adminadmin<br>当您使用以上密码首次登录后，面板会显示已初始化密码。请在SSH终端内查看新密码（输出的结果就是实际的密码了{“username”:“admin”,“password”:””），查看代码如<br>docker exec -it qinglong cat /ql/config/auth.json</p>
+<p>青龙面板基础命令<br>#更新青龙<br>docker exec -it qinglong ql update</p>
+<p>#更新青龙并编译<br>docker exec -it qinglong ql restart</p>
+<p>#拉取自定义仓库<br>docker exec -it qinglong ql repo <a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/whyour/hundun.git">https://ghproxy.com/https://github.com/whyour/hundun.git</a> “quanx” “tokens|caiyun|didi|donate|fold|Env”</p>
+<p>#拉取单个脚本<br>docker exec -it qinglong ql raw <a target="_blank" rel="noopener" href="https://ghproxy.com/https://raw.githubusercontent.com/moposmall/Script/main/Me/jx_cfd.js">https://ghproxy.com/https://raw.githubusercontent.com/moposmall/Script/main/Me/jx_cfd.js</a></p>
+<p>#删除7天前的所有日志<br>docker exec -it qinglong ql rmlog 7</p>
+<p>#启动bot<br>docker exec -it qinglong ql bot</p>
+<p>#导出互助码<br>docker exec -it qinglong ql code</p>
+<p>#通知测试<br>docker exec -it qinglong notify test test</p>
+<p>#立即执行脚本<br>docker exec -it qinglong task test.js now</p>
+<p>#并行执行脚本<br>docker exec -it qinglong task test.js conc</p>
+<p>拉取各种库的脚本如下<br>【Faker集合仓库】<br>ql repo <a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/shufflewzc/faker2.git">https://ghproxy.com/https://github.com/shufflewzc/faker2.git</a> “jd_|jx_|getJDCookie” “activity|backUp” “^jd[^<em>]|USER|ZooFaker_Necklace”<br>【curtinlv仓库】<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/curtinlv/JD-Script.git">https://github.com/curtinlv/JD-Script.git</a><br>【star】<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/star261/jd.git">https://github.com/star261/jd.git</a> “scripts” “code”<br>【怨念集合仓库】<br>ql repo <a target="_blank" rel="noopener" href="https://hub.fastgit.org/yuannian1112/jd_scripts.git">https://hub.fastgit.org/yuannian1112/jd_scripts.git</a> “jd</em>|jx_|getJDCookie” “activity|backUp” “^jd[^<em>]|USER|utils”<br>【ddo（hyzaw）】<br>ql repo <a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/shufflewzc/hyzaw.git">https://ghproxy.com/https://github.com/shufflewzc/hyzaw.git</a> “ddo</em>“<br>【柠檬（胖虎）】<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/panghu999/panghu.git">https://github.com/panghu999/panghu.git</a> “jd_”<br>【温某某】<br>ql repo <a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/shufflewzc/Wenmoux.git">https://ghproxy.com/https://github.com/shufflewzc/Wenmoux.git</a><br>【混沌】<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/whyour/hundun.git">https://github.com/whyour/hundun.git</a> “quanx” “tokens|caiyun|didi|donate|fold|Env”<br>【龙珠】<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/whyour/hundun.git">https://github.com/whyour/hundun.git</a> “quanx” “tokens|caiyun|didi|donate|fold|Env”</p>
+<p>————————————–分割线————————————————</p>
+<p>推荐使用下方库(更新拉库命令)<br>拉库命令：<br>国内鸡：<br>ql repo <a target="_blank" rel="noopener" href="https://ghproxy.com/github.com/KingRan/JDJB.git">https://ghproxy.com/github.com/KingRan/JDJB.git</a> “jd_|jx_|jdCookie” “activity|backUp” “^jd[^<em>]|USER|utils|function|sign|sendNotify|ql|JDJR”<br>国外鸡：<br>ql repo ql repo <a target="_blank" rel="noopener" href="https://github.com/KingRan/JDJB.git">https://github.com/KingRan/JDJB.git</a> “jd</em>|jx_|jdCookie” “activity|backUp” “^jd[^_]|USER|utils|function|sign|sendNotify|ql|JDJR”<br>ccwav大佬的资产通知增强版和CK检测</p>
+<p>2.10.3之前版本青龙拉库命令:</p>
+<p>不包含sendNotify:</p>
+<p>ql repo <a target="_blank" rel="noopener" href="https://github.com/ccwav/QLScript2.git">https://github.com/ccwav/QLScript2.git</a> “jd_” “NoUsed” “ql|utils”</p>
+<p>包含sendNotify:</p>
+<p>ql repo <a target="_blank" rel="noopener" href="https://github.com/ccwav/QLScript2.git">https://github.com/ccwav/QLScript2.git</a> “jd_” “NoUsed” “ql|sendNotify|utils”</p>
+<p>2.10.3之后版本青龙拉库命令:</p>
+<p>不包含sendNotify:</p>
+<p>ql repo <a target="_blank" rel="noopener" href="https://github.com/ccwav/QLScript2.git">https://github.com/ccwav/QLScript2.git</a> “jd_” “NoUsed” “ql|utils|USER_AGENTS|jdCookie|JS_USER_AGENTS”</p>
+<p>包含sendNotify:</p>
+<p>ql repo <a target="_blank" rel="noopener" href="https://github.com/ccwav/QLScript2.git">https://github.com/ccwav/QLScript2.git</a> “jd_” “NoUsed” “ql|sendNotify|utils|USER_AGENTS|jdCookie|JS_USER_AGENTS”<br>carry库（老年人内部互助库）<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/cdle/carry.git">https://github.com/cdle/carry.git</a> “jd_|jx_” “” “^jd[^_]|USER|share”</p>
+<p>冲鸭库：购物车抽奖、开卡库(2021.12.28更新)<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/mmnvnmm/omo.git">https://github.com/mmnvnmm/omo.git</a> “jd_” “NoUsed” “ql|sendNotify|utils|USER_AGENTS|jdCookie|JS_USER_AGENTS”</p>
+<p>小手冰凉 自用库（青龙2.10.3之前可拉）<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/chianPLA/xiaoshou.git">https://github.com/chianPLA/xiaoshou.git</a></p>
+<p>smiek2121开卡库：更新地址<br>国外鸡：<br>ql repo ql repo <a target="_blank" rel="noopener" href="https://github.com/smiek2121/scripts.git">https://github.com/smiek2121/scripts.git</a> “jd_|gua_” “” “ZooFaker_Necklace.js|JDJRValidator_Pure.js|sign_graphics_validate.js|cleancart_activity.js|jdCookie.js|sendNotify.js”</p>
+<p>wskey转换来源于Zy143L大佬（不上传，推荐）<br>完美网络用户：ql repo <a target="_blank" rel="noopener" href="https://github.com/Zy143L/wskey.git">https://github.com/Zy143L/wskey.git</a> “wskey”</p>
+<p>国内网络用户：ql repo <a target="_blank" rel="noopener" href="https://ghproxy.com/github.com/Zy143L/wskey.git">https://ghproxy.com/github.com/Zy143L/wskey.git</a> “wskey”</p>
+<p>京东保价、汽车兑换等<br>国内鸡<br>ql repo <a target="_blank" rel="noopener" href="https://ghproxy.com/github.com/KingRan/JD-Scripts.git">https://ghproxy.com/github.com/KingRan/JD-Scripts.git</a> “jd_|jx_|jdCookie” “activity|backUp” “^jd[^_]|USER|utils|function|sign|sendNotify|ql”</p>
+<p>国外鸡<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/KingRan/JD-Scripts.git">https://github.com/KingRan/JD-Scripts.git</a> “jd_|jx_|jdCookie” “activity|backUp” “^jd[^_]|USER|utils|function|sign|sendNotify|ql”</p>
+<h2 id="zero205大佬更新拉库命令"><a href="#zero205大佬更新拉库命令" class="headerlink" title="zero205大佬更新拉库命令"></a>zero205大佬更新拉库命令</h2><p>ql repo <a target="_blank" rel="noopener" href="https://github.com/zero205/JD_tencent_scf.git">https://github.com/zero205/JD_tencent_scf.git</a> “jd_|jx_|getJDCookie” “backUp|icon” “^jd[^_]|USER|sendNotify|sign_graphics_validate|JDJR””main”</p>
+<h2 id="star261"><a href="#star261" class="headerlink" title="star261"></a>star261</h2><p>ql repo <a target="_blank" rel="noopener" href="https://github.com/star261/jd.git">https://github.com/star261/jd.git</a> “scripts|jd” “” “” “main”</p>
+<h2 id="chinnkarahoi-无维护，原版"><a href="#chinnkarahoi-无维护，原版" class="headerlink" title="chinnkarahoi 无维护，原版"></a>chinnkarahoi 无维护，原版</h2><p>ql repo <a target="_blank" rel="noopener" href="https://github.com/chinnkarahoi/jd_scripts.git">https://github.com/chinnkarahoi/jd_scripts.git</a> “jd_|jx_|getJDCookie” “activity|backUp|Coupon” “^jd[^_]|USER”</p>
+<h2 id="JDHelloWorld-基本天天有更新-但是采用TS脚本让初学者不友好"><a href="#JDHelloWorld-基本天天有更新-但是采用TS脚本让初学者不友好" class="headerlink" title="JDHelloWorld 基本天天有更新,但是采用TS脚本让初学者不友好"></a>JDHelloWorld 基本天天有更新,但是采用TS脚本让初学者不友好</h2><p>ql repo <a target="_blank" rel="noopener" href="https://github.com/JDHelloWorld/jd_scripts.git">https://github.com/JDHelloWorld/jd_scripts.git</a> “jd_|jx_|getCookie” “activity|backUp|Coupon|enen|update” “^jd[^<em>]|USER|tools”<br>##柠檬panghu 已经跑路<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/panghu999/jd_scripts.git">https://github.com/panghu999/jd_scripts.git</a> “jd_|jx</em>|getJDCookie” “activity|backUp|jd_delCoupon|format_” “^jd[^_]|USER”</p>
+<h2 id="he1pu-有更新"><a href="#he1pu-有更新" class="headerlink" title="he1pu 有更新"></a>he1pu 有更新</h2><p>ql repo <a target="_blank" rel="noopener" href="https://github.com/he1pu/JDHelp.git">https://github.com/he1pu/JDHelp.git</a> “jd_|jx_|getJDCookie” “activity|backUp|jd_delCoupon” “^jd[^_]|USER”</p>
+<h2 id="shufflewzc-集合目前能用的脚本有更新"><a href="#shufflewzc-集合目前能用的脚本有更新" class="headerlink" title="shufflewzc 集合目前能用的脚本有更新"></a>shufflewzc 集合目前能用的脚本有更新</h2><p>ql repo <a target="_blank" rel="noopener" href="https://github.com/shufflewzc/faker2.git">https://github.com/shufflewzc/faker2.git</a> “jd_|jx_|jddj_|getJDCookie” “activity|backUp” “^jd[^<em>]|USER|ZooFaker_Necklace|JDJRValidator_Pure|sign_graphics_validate”<br>##Annyoo2021 lxk最终版及搬运整理 集合目前能用的脚本 推荐<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/Annyoo2021/scripts.git">https://github.com/Annyoo2021/scripts.git</a> “jd</em>|jx_|long_|getJDCookie” “activity|backUp” “^jd[^_]|USER|ZooFaker_Necklace|JDJRValidator_Pure|JDJRValidator” “main”</p>
+<h2 id="yuannian1112拉取仓库命令：-不推荐"><a href="#yuannian1112拉取仓库命令：-不推荐" class="headerlink" title="yuannian1112拉取仓库命令： 不推荐"></a>yuannian1112拉取仓库命令： 不推荐</h2><p>国内鸡<br>ql repo <a target="_blank" rel="noopener" href="https://hub.fastgit.org/yuannian1112/jd_scripts.git">https://hub.fastgit.org/yuannian1112/jd_scripts.git</a> “jd_|jx_|getJDCookie” “activity|backUp” “^jd[^<em>]|USER|utils”<br>国外鸡<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/yuannian1112/jd_scripts.git">https://github.com/yuannian1112/jd_scripts.git</a> “jd_|jx</em>|getJDCookie” “activity|backUp” “^jd[^_]|USER|utils”<br>v4修改默认库为<br><a target="_blank" rel="noopener" href="https://hub.fastgit.org/yuannian1112/jd_scripts.git">https://hub.fastgit.org/yuannian1112/jd_scripts.git</a><br>分支修改为main</p>
+<p>Tsukasa007仓库<br><a target="_blank" rel="noopener" href="https://github.com/Tsukasa007/my_script/tree/master">https://github.com/Tsukasa007/my_script/tree/master</a></p>
+<p>同步上游各个大佬的仓库 相当于合集<br><a target="_blank" rel="noopener" href="https://github.com/DovFork">https://github.com/DovFork</a><br>更新7.7最新仓库：（仅提供地址，拉取请参照下面）</p>
+<p>Annyoo2021仓库 基本天天更新，集合了大量可用脚本<br><a target="_blank" rel="noopener" href="https://github.com/Annyoo2021/scripts">https://github.com/Annyoo2021/scripts</a></p>
+<p>lukesyy仓库<br><a target="_blank" rel="noopener" href="https://github.com/lukesyy/jd_yun">https://github.com/lukesyy/jd_yun</a></p>
+<p>zero205仓库<br><a target="_blank" rel="noopener" href="https://github.com/zero205/JD_tencent_scf">https://github.com/zero205/JD_tencent_scf</a><br>curtinlv仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/curtinlv/JD-Script.git">https://github.com/curtinlv/JD-Script.git</a></p>
+<p>he1pu互助仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/he1pu/JDHelp.git">https://github.com/he1pu/JDHelp.git</a> “jd_|jx_|getJDCookie” “activity|backUp|Coupon” “^jd[^_]|USER”</p>
+<p>柠檬（胖虎）代维护lxk0301仓库 已经跑路<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/panghu999/jd_scripts.git">https://github.com/panghu999/jd_scripts.git</a> “jd_|jx_|getJDCookie” “activity|backUp|Coupon|jd_try|format_” “^jd[^_]|USER”</p>
+<p>zcy01仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/ZCY01/daily_scripts.git">https://github.com/ZCY01/daily_scripts.git</a> “jd_”</p>
+<p>passerby-b 仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/passerby-b/JDDJ.git">https://github.com/passerby-b/JDDJ.git</a> “jddj_” “scf_test_event|jddj_fruit_code.js|jddj_getck.js|jd_|jddj_cookie”</p>
+<p>JDHelloWorld仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/JDHelloWorld/jd_scripts.git">https://github.com/JDHelloWorld/jd_scripts.git</a> “jd_|jx_|getJDCookie” “activity|backUp|Coupon|enen|update” “^jd[^_]|USER”</p>
+<p>jiulan仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/jiulan/platypus.git">https://github.com/jiulan/platypus.git</a></p>
+<p>Ariszy（Zhiyi-N）仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/Ariszy/Private-Script.git">https://github.com/Ariszy/Private-Script.git</a> “JD”</p>
+<p>柠檬（胖虎）仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/panghu999/panghu.git">https://github.com/panghu999/panghu.git</a> “jd_”</p>
+<p>混沌仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/whyour/hundun.git">https://github.com/whyour/hundun.git</a> “quanx” “tokens|caiyun|didi|donate|fold|Env|.py”</p>
+<p>moposmall仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/moposmall/Script.git">https://github.com/moposmall/Script.git</a> “jx_mc|cfd.js”</p>
+<p>龙珠仓库<br>ql repo <a target="_blank" rel="noopener" href="https://github.com/longzhuzhu/nianyu.git">https://github.com/longzhuzhu/nianyu.git</a> “qx” “main”<br>更新青龙<br>docker exec -it qinglong ql update<br>更新青龙并编译<br>docker exec -it qinglong ql check<br>启动bot<br>docker exec -it qinglong ql check<br>删除7天前的所有日志<br>docker exec -it qinglong ql rmlog 7<br>通知测试<br>docker exec -it qinglong notify test test<br>立即执行脚本<br>docker exec -it qinglong task test.js now<br>并行执行脚本<br>docker exec -it qinglong task test.js conc</p>
+<p>————————————–分割线————————————————</p>
+<p>手机号直接获取cookie，NVJDC面板对接青龙面板<br>开始搭建<br>1.1版本安装<br>可以和青龙面板试用同一服务器搭建，如果要更换其他服务器需要重新配置Docker</p>
+<p>一键脚本<br>bash &lt;(curl -sL <a target="_blank" rel="noopener" href="https://git.io/JMWTL">https://git.io/JMWTL</a>)<br>选择：1</p>
+<p>请输入青龙服务器在web页面中显示的名称: 【自定义】</p>
+<p>请输入nvjdc面板标题: 【自定义】</p>
+<p>请输入nvjdc面板希望使用的端口号: 【自定义】</p>
+<p>请输入XDD面板地址，格式如<a target="_blank" rel="noopener" href="http://192.168.2.2:6666/api/login/smslogin">http://192.168.2.2:6666/api/login/smslogin</a> 如不启用直接回车:【直接回车】</p>
+<p>请输入XDD面板Token（如不启用直接回车）:【直接回车】</p>
+<p>nvjdc是否对接青龙，输入y或者n【y】</p>
+<p>请输入青龙OpenApi Client ID: 【青龙面板查找】</p>
+<p>请输入青龙OpenApi Client Secret: 【青龙面板查找】</p>
+<p>请输入青龙服务器的url地址（类似<a href="http://192.168.2.2:5700）:【你的青龙面板http://ip：端口】">http://192.168.2.2:5700）:【你的青龙面板http://ip：端口】</a></p>
+<p>请输入自动滑块次数 直接回车默认5次后手动滑块 输入0为默认手动滑块: 【5】</p>
+<p>新版本安装<br>如果代码失效请移步：<a target="_blank" rel="noopener" href="https://github.com/King-stark/NvJDCloud">https://github.com/King-stark/NvJDCloud</a></p>
+<p>1、拉源码<br>国外机:git clone -b main <a target="_blank" rel="noopener" href="https://github.com/King-stark/NvJDCloud.git">https://github.com/King-stark/NvJDCloud.git</a> ~/nvjdc<br>国内机:git clone -b main <a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/King-stark/NvJDCloud.git">https://ghproxy.com/https://github.com/King-stark/NvJDCloud.git</a> ~/nvjdc</p>
+<p>2 、拉取基础镜像<br>docker pull nolanhzy/nvjdc:latest</p>
+<p>3 、安装unzip，如果已安装unzip可忽略<br>centos:yum install wget unzip -y<br>Ubuntu/Debian:apt-get install wget unzip -y</p>
+<p>4、创建一个目录放配置<br>1、cd nvjdc<br>2、mkdir -p Config &amp;&amp; cd Config</p>
+<p>5、下载Config.json 配置文件 并且修改自己的配置 不能缺少<br>国外机：wget -O Config.json <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/King-stark/NvJDCloud/doc/Config.json">https://raw.githubusercontent.com/King-stark/NvJDCloud/doc/Config.json</a><br>国内机:wget -O Config.json <a target="_blank" rel="noopener" href="https://ghproxy.com/https://raw.githubusercontent.com/King-stark/NvJDCloud/doc/Config.json">https://ghproxy.com/https://raw.githubusercontent.com/King-stark/NvJDCloud/doc/Config.json</a></p>
+<p>把必要的Config参数改好（url，ID，Secret）</p>
+<p>{<br>///最大支持几个网页<br>“MaxTab”: “4”,<br>//网站标题<br>“Title”: “NVJDC”,<br>//网站公告<br>“Announcement”: “本项目脚本收集于互联网，为了您的财产安全，请关闭京东免密支付。”,<br>//滑块次数，0为手动<br>“AutoCaptchaCount”: “0”,<br>///多青龙配置<br>“Config”: [<br>{<br>//序号必须从1开始<br>“QLkey”: 1,<br>//服务器名称<br>“QLName”: “阿里云”,<br>//青龙url<br>“QLurl”: “”,<br>//青龙2,9 OpenApi Client ID<br>“QL_CLIENTID”: “”,<br>//青龙2,9 OpenApi Client Secret<br>“QL_SECRET”: “”,<br>//青龙面包最大ck容量<br>“QL_CAPACITY”: 25,<br>//消息推送二维码链接<br>“QLkey”: 2,<br>},<br>]<br>}</p>
+<p>6 、安装浏览器<br>回到nvjdc目录创建chromium文件夹并进入<br>cd ~/nvjdc &amp;&amp; mkdir -p .local-chromium/Linux-884014 &amp;&amp; cd .local-chromium/Linux-884014</p>
+<p>7、下载 chromium并解压<br>wget <a target="_blank" rel="noopener" href="http://npm.taobao.org/mirrors/chromium-browser-snapshots/Linux_x64/884014/chrome-linux.zip">http://npm.taobao.org/mirrors/chromium-browser-snapshots/Linux_x64/884014/chrome-linux.zip</a> &amp;&amp; unzip chrome-linux.zip<br>此时应检查chrome-linux.zip 文件是否解压成功，如为解压重新执行解压命令<br>unzip chrome-linux.zip</p>
+<p>8、删除刚刚下载的压缩包<br>rm -f chrome-linux.zip</p>
+<p>9、回到刚刚创建的目录<br>cd ~/nvjdc<br>10、启动镜像</p>
+<p>docker run –name nvjdc -p 5701:80 -d -v “$(pwd)”:/app <br>-v /etc/localtime:/etc/localtime:ro <br>-it –privileged=true nolanhzy/nvjdc:latest</p>
+<p>搭建完成</p>
+<p>NVJDC端口5701。输入ip:5701 即可打开使用了</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2022/08/10/QingLong-tips/">QingLong-tips</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
+        <p><span>发布时间:</span>2022年08月10日 - 17时44分</p>
+        <p><span>最后更新:</span>2022年08月10日 - 17时46分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2022/08/10/QingLong-tips/" title="QingLong-tips">http://yoursite.com/2022/08/10/QingLong-tips/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2022/08/10/QingLong-tips/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2022/10/21/node-js%EF%BC%9AsetTimeout%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%AD%A5delay%E5%BB%B6%E6%97%B6%E5%87%BD%E6%95%B0/">
+                    node.js：setTimeout实现同步delay延时函数
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2022/02/08/pipinstall%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">
+                    pipinstall失败问题解决
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#zero205%E5%A4%A7%E4%BD%AC%E6%9B%B4%E6%96%B0%E6%8B%89%E5%BA%93%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">zero205大佬更新拉库命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#star261"><span class="toc-number">2.</span> <span class="toc-text">star261</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chinnkarahoi-%E6%97%A0%E7%BB%B4%E6%8A%A4%EF%BC%8C%E5%8E%9F%E7%89%88"><span class="toc-number">3.</span> <span class="toc-text">chinnkarahoi 无维护，原版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDHelloWorld-%E5%9F%BA%E6%9C%AC%E5%A4%A9%E5%A4%A9%E6%9C%89%E6%9B%B4%E6%96%B0-%E4%BD%86%E6%98%AF%E9%87%87%E7%94%A8TS%E8%84%9A%E6%9C%AC%E8%AE%A9%E5%88%9D%E5%AD%A6%E8%80%85%E4%B8%8D%E5%8F%8B%E5%A5%BD"><span class="toc-number">4.</span> <span class="toc-text">JDHelloWorld 基本天天有更新,但是采用TS脚本让初学者不友好</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#he1pu-%E6%9C%89%E6%9B%B4%E6%96%B0"><span class="toc-number">5.</span> <span class="toc-text">he1pu 有更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shufflewzc-%E9%9B%86%E5%90%88%E7%9B%AE%E5%89%8D%E8%83%BD%E7%94%A8%E7%9A%84%E8%84%9A%E6%9C%AC%E6%9C%89%E6%9B%B4%E6%96%B0"><span class="toc-number">6.</span> <span class="toc-text">shufflewzc 集合目前能用的脚本有更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yuannian1112%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93%E5%91%BD%E4%BB%A4%EF%BC%9A-%E4%B8%8D%E6%8E%A8%E8%8D%90"><span class="toc-number">7.</span> <span class="toc-text">yuannian1112拉取仓库命令： 不推荐</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2022/08/10/QingLong-tips/" data-title="QingLong-tips" data-url="http://yoursite.com/2022/08/10/QingLong-tips/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"abcdef4love"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2022/10/21/node-js%EF%BC%9AsetTimeout%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%AD%A5delay%E5%BB%B6%E6%97%B6%E5%87%BD%E6%95%B0/" title="上一篇: node.js：setTimeout实现同步delay延时函数">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2022/02/08/pipinstall%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="下一篇: pipinstall失败问题解决">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2022/10/21/node-js%EF%BC%9AsetTimeout%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%AD%A5delay%E5%BB%B6%E6%97%B6%E5%87%BD%E6%95%B0/">node.js：setTimeout实现同步delay延时函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/08/10/QingLong-tips/">QingLong-tips</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/02/08/pipinstall%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">pipinstall失败问题解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/05/TensorFlow/">TensorFlow</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/04/Linux%E5%AE%89%E8%A3%85MySQL/">Linux安装MySQL</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/30/%E8%A7%A3%E5%86%B3C%E7%9B%98%E7%A9%BA%E9%97%B4%E4%B8%8D%E5%A4%9F/">解决C盘空间不够</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/08/%E7%A7%91%E5%AD%A6%E5%8F%B2%E8%AF%9D/">科学史话</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/19/C%E7%9B%98%E6%B8%85%E7%90%86/">C盘清理</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/09/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/">联邦学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/11/%E9%B8%BF%E8%92%99wifiiot%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">鸿蒙wifiiot编译问题解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/06/%E9%B8%BF%E8%92%99Theme%E8%AE%BE%E7%BD%AE/">鸿蒙Theme设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/06/%E6%9D%8E%E7%BE%8E%E4%B8%BD%E5%9C%A8%E6%89%93%E6%89%AB%E5%8D%AB%E7%94%9F/">李美丽在打扫卫生</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/06/%E9%B8%BF%E8%92%99%E5%B0%8F%E6%B1%BD%E8%BD%A6/">鸿蒙小汽车</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/20/2020/">2020</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/05/%E6%88%91%E5%9B%9E%E6%9D%A5%E4%BA%86/">我回来了</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/05/day1/">day1</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/29/%E4%BF%9D%E9%99%A9%E6%8B%86%E5%8D%95%E6%A0%A1%E9%AA%8C/">保险拆单校验</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/web%E6%94%AF%E6%8C%81cors/">web支持cors</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/30/pool-english/">pool english</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/28/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/">程序员的自我修养</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/%E8%A1%8C%E8%BD%AC%E5%88%97%E7%9A%84%E9%97%AE%E9%A2%98/">转列的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/%E4%B8%BB%E6%B5%81%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%94%E5%9B%9E%E6%8C%87%E5%AE%9A%E6%95%B0%E9%87%8F%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%BA%8F%E5%88%97/">主流数据库返回指定数量的随机序列</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/%E5%84%BF%E6%97%B6%E7%9A%84%E5%A4%8F%E5%A4%A9/">儿时的夏天</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/oracle%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%A1%A8%E7%94%A8/">oracle函数作为表用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/18/hexo%E5%91%BD%E4%BB%A4/">hexo命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/01/%E4%B8%96%E7%95%8C%EF%BC%8C%E4%BD%A0%E5%A5%BD%EF%BC%81/">世界，你好！！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/01/hello-world/">hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/01/android%E8%B0%83%E7%94%A8%E7%B3%BB%E7%BB%9F%E6%8B%8D%E7%85%A7%EF%BC%8C%E4%B8%8D%E8%83%BD%E8%87%AA%E5%8A%A8%E6%97%8B%E8%BD%AC%E7%9A%84%E9%97%AE%E9%A2%98/">世界，你好！</a></li></ul>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2022 ㄣ西石
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.1.22/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+    <script src="//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
