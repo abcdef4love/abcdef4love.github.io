@@ -254,6 +254,102 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-linux目录及用途" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/11/06/linux%E7%9B%AE%E5%BD%95%E5%8F%8A%E7%94%A8%E9%80%94/" class="article-date">
+      <time datetime="2022-11-06T10:50:45.000Z" itemprop="datePublished">2022-11-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/06/linux%E7%9B%AE%E5%BD%95%E5%8F%8A%E7%94%A8%E9%80%94/">linux目录及用途</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="usr"><a href="#usr" class="headerlink" title="/usr"></a><strong><code>/usr</code></strong></h1><p>系统级的目录，可以理解为 <code>C:/Windows/</code> ， <code>/usr/lib</code> 可理解为 <code>C:/Windows/System32</code> 。</p>
+<h1 id="usr-local"><a href="#usr-local" class="headerlink" title="/usr/local"></a><code>/usr/local</code></h1><p>用户级的程序目录，可以理解为 <code>C:/Progrem Files/</code> 。用户自己编译的软件默认会安装到这个目录下。</p>
+<h1 id="opt"><a href="#opt" class="headerlink" title="/opt"></a><code>/opt</code></h1><p>用户级的程序目录，可以理解为 <code>D:/Software</code> ， <code>opt</code> 有可选的意思，这里可以用于放置第三方大型软件（或游戏），当你不需要时，直接 <code>rm -rf</code> 掉即可。</p>
+<p>在硬盘容量不够时，也可将 <code>/opt</code> 单独<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%8C%82%E8%BD%BD&spm=1001.2101.3001.7020">挂载</a>到其他磁盘上使用。</p>
+<blockquote>
+<p><strong>源码放哪里？</strong></p>
+</blockquote>
+<h1 id="usr-src"><a href="#usr-src" class="headerlink" title="/usr/src"></a><code>/usr/src</code></h1><p>系统级的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%BA%90%E7%A0%81&spm=1001.2101.3001.7020">源码</a>目录。</p>
+<h1 id="usr-local-src"><a href="#usr-local-src" class="headerlink" title="/usr/local/src"></a><code>/usr/local/src</code></h1><p>用户级的源码目录。</p>
+<blockquote>
+<p><strong>拓展：</strong></p>
+</blockquote>
+<h1 id="opt-1"><a href="#opt-1" class="headerlink" title="/opt"></a>/opt</h1><p>这里主要存放那些可选的程序。你想尝试最新的firefox测试版吗?那就装到/opt目录下吧，这样，当你尝试完，想删掉firefox的时候，你就可 以直接删除它，而不影响系统其他任何设置。安装到/opt目录下的程序，它所有的数据、库文件等等都是放在同个目录下面。</p>
+<p>举个例子：刚才装的测试版firefox，就可以装到/opt/firefox_beta目录下，/opt/firefox_beta目录下面就包含了运 行firefox所需要的所有文件、库、数据等等。要删除firefox的时候，你只需删除/opt/firefox_beta目录即可，非常简单。</p>
+<h1 id="usr-local-1"><a href="#usr-local-1" class="headerlink" title="/usr/local"></a><strong>/usr/local</strong></h1><p>这里主要存放那些手动安装的软件，即不是通过“新立得”或apt-get安装的软件。它和/usr目录具有相类似的目录结构。让软件包管理器来管理/usr目录，而把自定义的脚本(scripts)放到/usr/local目录下面，我想这应该是个不错的主意。</p>
+<blockquote>
+<p><strong>常用目录及用途</strong></p>
+</blockquote>
+<p><code>/bin</code> 存放二进制可执行文件（ls,cat,mkdir等），常用命令一般都在这里。</p>
+<p><code>/etc</code> 存放系统管理和配置文件</p>
+<p><code>/home</code> 存放所有用户文件的根目录，是用户主目录的基点，比如用户user的主目录就是/home/user，可以用~user表示</p>
+<p><code>/usr</code> 用于存放系统应用程序，比较重要的目录/usr/local 本地系统管理员软件安装目录（安装系统级的应用）。这是最庞大的目录，要用到的应用程序和文件几乎都在这个目录。</p>
+<p><code>/usr/x11r6</code> 存放x window的目录</p>
+<p><code>/usr/bin</code> 众多的应用程序  </p>
+<p><code>/usr/sbin</code> 超级用户的一些管理程序  </p>
+<p><code>/usr/doc</code> linux文档  </p>
+<p><code>/usr/include</code> linux下开发和编译应用程序所需要的头文件  </p>
+<p><code>/usr/lib</code> 常用的动态链接库和软件包的配置文件  </p>
+<p><code>/usr/man</code> 帮助文档  </p>
+<p><code>/usr/src</code> 源代码，linux内核的源代码就放在/usr/src/linux里  </p>
+<p><code>/usr/local/bin</code> 本地增加的命令  </p>
+<p><code>/usr/local/lib</code> 本地增加的库</p>
+<p><code>/opt</code> 额外安装的可选应用程序包所放置的位置。一般情况下，我们可以把tomcat等都安装到这里。</p>
+<p><code>/proc</code> 虚拟文件系统目录，是系统内存的映射。可直接访问这个目录来获取系统信息。</p>
+<p><code>/root</code> 超级用户（系统管理员）的主目录（特权阶级^o^）</p>
+<p><code>/sbin</code> 存放二进制可执行文件，只有root才能访问。这里存放的是系统管理员使用的系统级别的管理命令和程序。如ifconfig等。</p>
+<p><code>/dev</code> 用于存放设备文件。</p>
+<p><code>/mnt</code> 系统管理员安装临时文件系统的安装点，系统提供这个目录是让用户临时挂载其他的文件系统。</p>
+<p><code>/boot</code> 存放用于系统引导时使用的各种文件</p>
+<p><code>/lib</code> 存放跟文件系统中的程序运行所需要的共享库及内核模块。共享库又叫动态链接共享库，作用类似windows里的.dll文件，存放了根文件系统程序运行所需的共享文件。</p>
+<p><code>/tmp</code> 用于存放各种临时文件，是公用的临时文件存储点。</p>
+<p><code>/var</code> 用于存放运行时需要改变数据的文件，也是某些大文件的溢出区，比方说各种服务的日志文件（系统启动日志等。）等。</p>
+<p><code>/lost+found</code> 每个分区默认都有一个 <code>lost+found</code> 目录，用来存放 fsck 过程中部分修复的文件的。</p>
+<p> 转载于：<a target="_blank" rel="noopener" href="https://www.w3h5.com/post/336.html">https://www.w3h5.com/post/336.html</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-node-js：setTimeout实现同步delay延时函数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -846,82 +942,6 @@
           
         <p>ML：我猜是Machine Leaning<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/alw_123/article/details/82193535">https://blog.csdn.net/alw_123/article/details/82193535</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/alw_123/article/details/82825785">https://blog.csdn.net/alw_123/article/details/82825785</a><br>ML中称它为损失函数（说白了就是计算误差的函数）：线性方程与实际数据的偏差求和。<br>这里用到了欧拉定理（）<br>涉及技术：<br>1、线性回归<br>2、同态加密技术</p>
 <p>找到一组参数（也就是线性方程每一项上的系数）能让我的损失函数的值最小，那我这一组参数就能最好的拟合我现在的训练数据<br>1、梯度下降<br>2、线性回归方程正规求解</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-鸿蒙wifiiot编译问题解决" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/02/11/%E9%B8%BF%E8%92%99wifiiot%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="article-date">
-      <time datetime="2021-02-10T16:18:56.000Z" itemprop="datePublished">2021-02-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/02/11/%E9%B8%BF%E8%92%99wifiiot%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">鸿蒙wifiiot编译问题解决</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>rm/system -Lbuild/build_tmp/scripts -Lbuild/libs -Lbuild/libs/hi3861/release/no_mesh -Lbuild/scripts -Lohos/libs -Tbuild/build_tmp/scripts/link.lds -Map=output/bin/Hi3861_wifiiot_app.map -o output/bin/Hi3861_wifiiot_app.out –start-group –no-whole-archive –whole-archive -lHwKeystoreSDK -ladc -lat -lauthmanager -lbootstrap -lbroadcast -lc_flash -lcfg -lcjson_static -lcmsis -lcommon_lite -lcpup -ldiag -ldiscovery -ldrv -lflash -lgcc -lgpio -lhal_file_static -lhal_iothardware -lhal_sysparam -lhal_token_static -lhichainsdk -lhilog_lite -lhiview_lite -lio -liothardware -liperf -lkal -lled_example -llitekernel_flash -lltoswpa -llwip -lm_flash -lmbedtls -lnative_file -lparttab -lres_cfg -lsamgr -lsamgr_adapter -lsamgr_source -lsdio -lsec_flash -lsensing_demo -lspiffs -lsysparam -lsystem -ltoken_static -ltrans_service -ltsensor -luart -lupg -lutils_kv_store -lwifi -lwifi_flash -lwifiiot_app -lwifiservice -lwpa –end-group<br>riscv32-unknown-elf-ld: ohos/libs/libhal_iothardware.a(hal_wifiiot_i2c.o): in function <code>.L0 &#39;: hal_wifiiot_i2c.c:(.text.HalI2cWrite+0x12): undefined reference to </code>hi_i2c_write’<br>riscv32-unknown-elf-ld: hal_wifiiot_i2c.c:(.text.HalI2cRead+0x12): undefined reference to <code>hi_i2c_read&#39; riscv32-unknown-elf-ld: hal_wifiiot_i2c.c:(.text.HalI2cInit+0x12): undefined reference to </code>hi_i2c_init’<br>riscv32-unknown-elf-ld: ohos/libs/libhal_iothardware.a(hal_wifiiot_pwm.o): in function <code>.L0 &#39;: hal_wifiiot_pwm.c:(.text.HalPwmInit+0x16): undefined reference to </code>hi_pwm_set_clock’<br>riscv32-unknown-elf-ld: hal_wifiiot_pwm.c:(.text.HalPwmInit+0x24): undefined reference to <code>hi_pwm_init&#39; riscv32-unknown-elf-ld: hal_wifiiot_pwm.c:(.text.HalPwmStart+0x12): undefined reference to </code>hi_pwm_start’<br>riscv32-unknown-elf-ld: hal_wifiiot_pwm.c:(.text.HalPwmStop+0x12): undefined reference to `hi_pwm_stop’<br>scons: *** [output/bin/Hi3861_wifiiot_app.out] Error 1<br>BUILD FAILED!!!!<br>Failed building output/bin/Hi3861_wifiiot_app.out: Error 1<br>Traceback (most recent call last):<br>  File “../../build/lite/build_ext_components.py”, line 64, in <module><br>    sys.exit(main())<br>  File “../../build/lite/build_ext_components.py”, line 58, in main<br>    cmd_exec(args.command)<br>  File “../../build/lite/build_ext_components.py”, line 32, in cmd_exec<br>    raise Exception(“{} failed, return code is {}”.format(cmd, ret_code))<br>Exception: [‘sh’, ‘hm_build.sh’] failed, return code is 2<br>ninja: build stopped: subcommand failed.<br>you can check build log in /home/tony/homo/out/wifiiot/build.log<br>/home/tony/homo/tools/ninja/ninja -w dupbuild=warn -C /home/tony/homo/out/wifiiot failed, return code is 1<br>usage: </p>
-<p>解决方法：</p>
-<ol>
-<li><p>编译过程中报错：undefined reference to <code>hi_pwm_init</code> 等几个 <code>hi_pwm_</code>开头的函数，</p>
-<ul>
-<li><strong>原因：</strong> 因为默认情况下，hi3861_sdk中，PWM的CONFIG选项没有打开</li>
-<li><strong>解决：</strong> 修改<code>vendor\hisi\hi3861\hi3861\build\config\usr_config.mk</code>文件中的<code>CONFIG_PWM_SUPPORT</code>行：<ul>
-<li><code># CONFIG_PWM_SUPPORT is not set</code>修改为<code>CONFIG_PWM_SUPPORT=y</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>编译过程中报错：undefined reference to <code>hi_i2c_init</code> 等几个 <code>hi_i2c_</code>开头的函数，</p>
-<ul>
-<li><p><strong>原因：</strong> 因为默认情况下，hi3861_sdk中，I2C的CONFIG选项没有打开</p>
-</li>
-<li><p><strong>解决：</strong> 修改<code>vendor\hisi\hi3861\hi3861\build\config\usr_config.mk</code>文件中的<code>CONFIG_I2C_SUPPORT</code>行：</p>
-<ul>
-<li><code># CONFIG_I2C_SUPPORT is not set</code>修改为<code>CONFIG_I2C_SUPPORT=y</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
 
       
     </div>

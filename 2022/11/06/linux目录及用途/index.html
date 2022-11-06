@@ -3,19 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>oracle函数作为表用 | ㄣ西石  ·  博客</title>
+  <title>linux目录及用途 | ㄣ西石  ·  博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在开发中遇到一个东西，分享一下： 在oralce中，原先用like 作为标记区分一些关联关系，但是，注意这个但是！终有一日，会有改变。    现在是有逻辑关系的。传入一个机构号码，需要根据逻辑判断的。">
+  <meta name="description" content="&#x2F;usr系统级的目录，可以理解为 C:&#x2F;Windows&#x2F; ， &#x2F;usr&#x2F;lib 可理解为 C:&#x2F;Windows&#x2F;System32 。 &#x2F;usr&#x2F;local用户级的程序目录，可以理解为 C:&#x2F;Progrem Files&#x2F; 。用户自己编译的软件默认会安装到这个目录下。 &#x2F;opt用户级的程序目录，可以理解为 D:&#x2F;Software ， opt 有可选的意思，这里可以用于放置第三方大型软件（或游戏），当你">
 <meta property="og:type" content="article">
-<meta property="og:title" content="oracle函数作为表用">
-<meta property="og:url" content="http://yoursite.com/2016/03/02/oracle%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%A1%A8%E7%94%A8/index.html">
+<meta property="og:title" content="linux目录及用途">
+<meta property="og:url" content="http://yoursite.com/2022/11/06/linux%E7%9B%AE%E5%BD%95%E5%8F%8A%E7%94%A8%E9%80%94/index.html">
 <meta property="og:site_name" content="ㄣ西石  ·  博客">
-<meta property="og:description" content="在开发中遇到一个东西，分享一下： 在oralce中，原先用like 作为标记区分一些关联关系，但是，注意这个但是！终有一日，会有改变。    现在是有逻辑关系的。传入一个机构号码，需要根据逻辑判断的。">
+<meta property="og:description" content="&#x2F;usr系统级的目录，可以理解为 C:&#x2F;Windows&#x2F; ， &#x2F;usr&#x2F;lib 可理解为 C:&#x2F;Windows&#x2F;System32 。 &#x2F;usr&#x2F;local用户级的程序目录，可以理解为 C:&#x2F;Progrem Files&#x2F; 。用户自己编译的软件默认会安装到这个目录下。 &#x2F;opt用户级的程序目录，可以理解为 D:&#x2F;Software ， opt 有可选的意思，这里可以用于放置第三方大型软件（或游戏），当你">
 <meta property="og:locale">
-<meta property="article:published_time" content="2016-03-02T11:00:35.000Z">
-<meta property="article:modified_time" content="2021-02-06T14:35:34.029Z">
+<meta property="article:published_time" content="2022-11-06T10:50:45.000Z">
+<meta property="article:modified_time" content="2022-11-06T11:00:07.252Z">
 <meta property="article:author" content="ㄣ西石">
-<meta property="article:tag" content="oracle 技术">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ㄣ西石  ·  博客" type="application/atom+xml">
@@ -250,11 +249,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-oracle函数作为表用" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-linux目录及用途" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/02/oracle%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%A1%A8%E7%94%A8/" class="article-date">
-      <time datetime="2016-03-02T11:00:35.000Z" itemprop="datePublished">2016-03-02</time>
+      <a href="/2022/11/06/linux%E7%9B%AE%E5%BD%95%E5%8F%8A%E7%94%A8%E9%80%94/" class="article-date">
+      <time datetime="2022-11-06T10:50:45.000Z" itemprop="datePublished">2022-11-06</time>
 </a>
     </div>
   
@@ -267,7 +266,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      oracle函数作为表用
+      linux目录及用途
     </h1>
   
 
@@ -277,10 +276,6 @@
         
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle-%E6%8A%80%E6%9C%AF/" rel="tag">oracle 技术</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -288,39 +283,50 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>在开发中遇到一个东西，分享一下：</p>
-<p>在oralce中，原先用like 作为标记区分一些关联关系，但是，注意这个但是！终有一日，会有改变。<br>    现在是有逻辑关系的。传入一个机构号码，需要根据逻辑判断的。</p>
-<ul>
-<li><a id="more"></a>
-
-<p>  SO！！！</p>
-<p>  也是弯路不断。</p>
-<p>  开始显示java改，改完后发现配置还是超多呢，总不能写多个sql吧？后来考虑要是case when，写起来也是要死人的。</p>
-<p>  finally：</p>
-<pre><code>      考虑函数或者存储过程，但是存储过程返回的貌似得用游标才能打开，根本不是我想要的结果集啊！
-      
-      
-</code></pre>
-<p>h1 markdown 用的少，试试</p>
-</li>
-</ul>
-<p>create type row_type as object(a varchar2(10));   </p>
-<p>create type table_type as table of row_type; </p>
-<p>create or replace function getDXQ(<br>            a in varchar2<br>        )<br>        return table_type pipelined</p>
-<pre><code>    is
-        v row_type;--定义v为行对象类型
-    begin
-      for thisrow in (select comcode  a from ldcom where comcode like a||&#39;%&#39;  ) loop
-        v := row_type(thisrow.a );
-        pipe row (v);
-      end loop;
-      return;
-    end;
-
-    select * from table(getDXQ(&#39;86&#39;));
-    
-</code></pre>
-<p>h1        nice！！！</p>
+        <h1 id="usr"><a href="#usr" class="headerlink" title="/usr"></a><strong><code>/usr</code></strong></h1><p>系统级的目录，可以理解为 <code>C:/Windows/</code> ， <code>/usr/lib</code> 可理解为 <code>C:/Windows/System32</code> 。</p>
+<h1 id="usr-local"><a href="#usr-local" class="headerlink" title="/usr/local"></a><code>/usr/local</code></h1><p>用户级的程序目录，可以理解为 <code>C:/Progrem Files/</code> 。用户自己编译的软件默认会安装到这个目录下。</p>
+<h1 id="opt"><a href="#opt" class="headerlink" title="/opt"></a><code>/opt</code></h1><p>用户级的程序目录，可以理解为 <code>D:/Software</code> ， <code>opt</code> 有可选的意思，这里可以用于放置第三方大型软件（或游戏），当你不需要时，直接 <code>rm -rf</code> 掉即可。</p>
+<p>在硬盘容量不够时，也可将 <code>/opt</code> 单独<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%8C%82%E8%BD%BD&spm=1001.2101.3001.7020">挂载</a>到其他磁盘上使用。</p>
+<blockquote>
+<p><strong>源码放哪里？</strong></p>
+</blockquote>
+<h1 id="usr-src"><a href="#usr-src" class="headerlink" title="/usr/src"></a><code>/usr/src</code></h1><p>系统级的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%BA%90%E7%A0%81&spm=1001.2101.3001.7020">源码</a>目录。</p>
+<h1 id="usr-local-src"><a href="#usr-local-src" class="headerlink" title="/usr/local/src"></a><code>/usr/local/src</code></h1><p>用户级的源码目录。</p>
+<blockquote>
+<p><strong>拓展：</strong></p>
+</blockquote>
+<h1 id="opt-1"><a href="#opt-1" class="headerlink" title="/opt"></a>/opt</h1><p>这里主要存放那些可选的程序。你想尝试最新的firefox测试版吗?那就装到/opt目录下吧，这样，当你尝试完，想删掉firefox的时候，你就可 以直接删除它，而不影响系统其他任何设置。安装到/opt目录下的程序，它所有的数据、库文件等等都是放在同个目录下面。</p>
+<p>举个例子：刚才装的测试版firefox，就可以装到/opt/firefox_beta目录下，/opt/firefox_beta目录下面就包含了运 行firefox所需要的所有文件、库、数据等等。要删除firefox的时候，你只需删除/opt/firefox_beta目录即可，非常简单。</p>
+<h1 id="usr-local-1"><a href="#usr-local-1" class="headerlink" title="/usr/local"></a><strong>/usr/local</strong></h1><p>这里主要存放那些手动安装的软件，即不是通过“新立得”或apt-get安装的软件。它和/usr目录具有相类似的目录结构。让软件包管理器来管理/usr目录，而把自定义的脚本(scripts)放到/usr/local目录下面，我想这应该是个不错的主意。</p>
+<blockquote>
+<p><strong>常用目录及用途</strong></p>
+</blockquote>
+<p><code>/bin</code> 存放二进制可执行文件（ls,cat,mkdir等），常用命令一般都在这里。</p>
+<p><code>/etc</code> 存放系统管理和配置文件</p>
+<p><code>/home</code> 存放所有用户文件的根目录，是用户主目录的基点，比如用户user的主目录就是/home/user，可以用~user表示</p>
+<p><code>/usr</code> 用于存放系统应用程序，比较重要的目录/usr/local 本地系统管理员软件安装目录（安装系统级的应用）。这是最庞大的目录，要用到的应用程序和文件几乎都在这个目录。</p>
+<p><code>/usr/x11r6</code> 存放x window的目录</p>
+<p><code>/usr/bin</code> 众多的应用程序  </p>
+<p><code>/usr/sbin</code> 超级用户的一些管理程序  </p>
+<p><code>/usr/doc</code> linux文档  </p>
+<p><code>/usr/include</code> linux下开发和编译应用程序所需要的头文件  </p>
+<p><code>/usr/lib</code> 常用的动态链接库和软件包的配置文件  </p>
+<p><code>/usr/man</code> 帮助文档  </p>
+<p><code>/usr/src</code> 源代码，linux内核的源代码就放在/usr/src/linux里  </p>
+<p><code>/usr/local/bin</code> 本地增加的命令  </p>
+<p><code>/usr/local/lib</code> 本地增加的库</p>
+<p><code>/opt</code> 额外安装的可选应用程序包所放置的位置。一般情况下，我们可以把tomcat等都安装到这里。</p>
+<p><code>/proc</code> 虚拟文件系统目录，是系统内存的映射。可直接访问这个目录来获取系统信息。</p>
+<p><code>/root</code> 超级用户（系统管理员）的主目录（特权阶级^o^）</p>
+<p><code>/sbin</code> 存放二进制可执行文件，只有root才能访问。这里存放的是系统管理员使用的系统级别的管理命令和程序。如ifconfig等。</p>
+<p><code>/dev</code> 用于存放设备文件。</p>
+<p><code>/mnt</code> 系统管理员安装临时文件系统的安装点，系统提供这个目录是让用户临时挂载其他的文件系统。</p>
+<p><code>/boot</code> 存放用于系统引导时使用的各种文件</p>
+<p><code>/lib</code> 存放跟文件系统中的程序运行所需要的共享库及内核模块。共享库又叫动态链接共享库，作用类似windows里的.dll文件，存放了根文件系统程序运行所需的共享文件。</p>
+<p><code>/tmp</code> 用于存放各种临时文件，是公用的临时文件存储点。</p>
+<p><code>/var</code> 用于存放运行时需要改变数据的文件，也是某些大文件的溢出区，比方说各种服务的日志文件（系统启动日志等。）等。</p>
+<p><code>/lost+found</code> 每个分区默认都有一个 <code>lost+found</code> 目录，用来存放 fsck 过程中部分修复的文件的。</p>
+<p> 转载于：<a target="_blank" rel="noopener" href="https://www.w3h5.com/post/336.html">https://www.w3h5.com/post/336.html</a></p>
 
       
     </div>
@@ -329,13 +335,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/03/02/oracle%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%A1%A8%E7%94%A8/">oracle函数作为表用</a></p>
+        <p><span>本文标题:</span><a href="/2022/11/06/linux%E7%9B%AE%E5%BD%95%E5%8F%8A%E7%94%A8%E9%80%94/">linux目录及用途</a></p>
         <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-        <p><span>发布时间:</span>2016年03月02日 - 19时00分</p>
-        <p><span>最后更新:</span>2021年02月06日 - 22时35分</p>
+        <p><span>发布时间:</span>2022年11月06日 - 18时50分</p>
+        <p><span>最后更新:</span>2022年11月06日 - 19时00分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/02/oracle%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%A1%A8%E7%94%A8/" title="oracle函数作为表用">http://yoursite.com/2016/03/02/oracle%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%A1%A8%E7%94%A8/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/03/02/oracle%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%A1%A8%E7%94%A8/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2022/11/06/linux%E7%9B%AE%E5%BD%95%E5%8F%8A%E7%94%A8%E9%80%94/" title="linux目录及用途">http://yoursite.com/2022/11/06/linux%E7%9B%AE%E5%BD%95%E5%8F%8A%E7%94%A8%E9%80%94/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2022/11/06/linux%E7%9B%AE%E5%BD%95%E5%8F%8A%E7%94%A8%E9%80%94/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -348,16 +354,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/03/17/%E5%84%BF%E6%97%B6%E7%9A%84%E5%A4%8F%E5%A4%A9/">
-                    儿时的夏天
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2015/06/18/hexo%E5%91%BD%E4%BB%A4/">
-                    hexo命令
+                <a href="/2022/10/21/node-js%EF%BC%9AsetTimeout%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%AD%A5delay%E5%BB%B6%E6%97%B6%E5%87%BD%E6%95%B0/">
+                    node.js：setTimeout实现同步delay延时函数
                 </a>
             </div>
         
@@ -368,7 +368,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#usr"><span class="toc-number">1.</span> <span class="toc-text">&#x2F;usr</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#usr-local"><span class="toc-number">2.</span> <span class="toc-text">&#x2F;usr&#x2F;local</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#opt"><span class="toc-number">3.</span> <span class="toc-text">&#x2F;opt</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#usr-src"><span class="toc-number">4.</span> <span class="toc-text">&#x2F;usr&#x2F;src</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#usr-local-src"><span class="toc-number">5.</span> <span class="toc-text">&#x2F;usr&#x2F;local&#x2F;src</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#opt-1"><span class="toc-number">6.</span> <span class="toc-text">&#x2F;opt</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#usr-local-1"><span class="toc-number">7.</span> <span class="toc-text">&#x2F;usr&#x2F;local</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -430,7 +430,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/02/oracle函数作为表用/" data-title="oracle函数作为表用" data-url="http://yoursite.com/2016/03/02/oracle%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%A1%A8%E7%94%A8/"></div>
+    <div class="ds-thread" data-thread-key="2022/11/06/linux目录及用途/" data-title="linux目录及用途" data-url="http://yoursite.com/2022/11/06/linux%E7%9B%AE%E5%BD%95%E5%8F%8A%E7%94%A8%E9%80%94/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -454,15 +454,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/17/%E5%84%BF%E6%97%B6%E7%9A%84%E5%A4%8F%E5%A4%A9/" title="上一篇: 儿时的夏天">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2015/06/18/hexo%E5%91%BD%E4%BB%A4/" title="下一篇: hexo命令">
+            <a href="/2022/10/21/node-js%EF%BC%9AsetTimeout%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%AD%A5delay%E5%BB%B6%E6%97%B6%E5%87%BD%E6%95%B0/" title="下一篇: node.js：setTimeout实现同步delay延时函数">
                 <i class="fa fa-angle-right"></i>
             </a>
         

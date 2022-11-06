@@ -254,6 +254,82 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-鸿蒙wifiiot编译问题解决" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/02/11/%E9%B8%BF%E8%92%99wifiiot%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="article-date">
+      <time datetime="2021-02-10T16:18:56.000Z" itemprop="datePublished">2021-02-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/11/%E9%B8%BF%E8%92%99wifiiot%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">鸿蒙wifiiot编译问题解决</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>rm/system -Lbuild/build_tmp/scripts -Lbuild/libs -Lbuild/libs/hi3861/release/no_mesh -Lbuild/scripts -Lohos/libs -Tbuild/build_tmp/scripts/link.lds -Map=output/bin/Hi3861_wifiiot_app.map -o output/bin/Hi3861_wifiiot_app.out –start-group –no-whole-archive –whole-archive -lHwKeystoreSDK -ladc -lat -lauthmanager -lbootstrap -lbroadcast -lc_flash -lcfg -lcjson_static -lcmsis -lcommon_lite -lcpup -ldiag -ldiscovery -ldrv -lflash -lgcc -lgpio -lhal_file_static -lhal_iothardware -lhal_sysparam -lhal_token_static -lhichainsdk -lhilog_lite -lhiview_lite -lio -liothardware -liperf -lkal -lled_example -llitekernel_flash -lltoswpa -llwip -lm_flash -lmbedtls -lnative_file -lparttab -lres_cfg -lsamgr -lsamgr_adapter -lsamgr_source -lsdio -lsec_flash -lsensing_demo -lspiffs -lsysparam -lsystem -ltoken_static -ltrans_service -ltsensor -luart -lupg -lutils_kv_store -lwifi -lwifi_flash -lwifiiot_app -lwifiservice -lwpa –end-group<br>riscv32-unknown-elf-ld: ohos/libs/libhal_iothardware.a(hal_wifiiot_i2c.o): in function <code>.L0 &#39;: hal_wifiiot_i2c.c:(.text.HalI2cWrite+0x12): undefined reference to </code>hi_i2c_write’<br>riscv32-unknown-elf-ld: hal_wifiiot_i2c.c:(.text.HalI2cRead+0x12): undefined reference to <code>hi_i2c_read&#39; riscv32-unknown-elf-ld: hal_wifiiot_i2c.c:(.text.HalI2cInit+0x12): undefined reference to </code>hi_i2c_init’<br>riscv32-unknown-elf-ld: ohos/libs/libhal_iothardware.a(hal_wifiiot_pwm.o): in function <code>.L0 &#39;: hal_wifiiot_pwm.c:(.text.HalPwmInit+0x16): undefined reference to </code>hi_pwm_set_clock’<br>riscv32-unknown-elf-ld: hal_wifiiot_pwm.c:(.text.HalPwmInit+0x24): undefined reference to <code>hi_pwm_init&#39; riscv32-unknown-elf-ld: hal_wifiiot_pwm.c:(.text.HalPwmStart+0x12): undefined reference to </code>hi_pwm_start’<br>riscv32-unknown-elf-ld: hal_wifiiot_pwm.c:(.text.HalPwmStop+0x12): undefined reference to `hi_pwm_stop’<br>scons: *** [output/bin/Hi3861_wifiiot_app.out] Error 1<br>BUILD FAILED!!!!<br>Failed building output/bin/Hi3861_wifiiot_app.out: Error 1<br>Traceback (most recent call last):<br>  File “../../build/lite/build_ext_components.py”, line 64, in <module><br>    sys.exit(main())<br>  File “../../build/lite/build_ext_components.py”, line 58, in main<br>    cmd_exec(args.command)<br>  File “../../build/lite/build_ext_components.py”, line 32, in cmd_exec<br>    raise Exception(“{} failed, return code is {}”.format(cmd, ret_code))<br>Exception: [‘sh’, ‘hm_build.sh’] failed, return code is 2<br>ninja: build stopped: subcommand failed.<br>you can check build log in /home/tony/homo/out/wifiiot/build.log<br>/home/tony/homo/tools/ninja/ninja -w dupbuild=warn -C /home/tony/homo/out/wifiiot failed, return code is 1<br>usage: </p>
+<p>解决方法：</p>
+<ol>
+<li><p>编译过程中报错：undefined reference to <code>hi_pwm_init</code> 等几个 <code>hi_pwm_</code>开头的函数，</p>
+<ul>
+<li><strong>原因：</strong> 因为默认情况下，hi3861_sdk中，PWM的CONFIG选项没有打开</li>
+<li><strong>解决：</strong> 修改<code>vendor\hisi\hi3861\hi3861\build\config\usr_config.mk</code>文件中的<code>CONFIG_PWM_SUPPORT</code>行：<ul>
+<li><code># CONFIG_PWM_SUPPORT is not set</code>修改为<code>CONFIG_PWM_SUPPORT=y</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>编译过程中报错：undefined reference to <code>hi_i2c_init</code> 等几个 <code>hi_i2c_</code>开头的函数，</p>
+<ul>
+<li><p><strong>原因：</strong> 因为默认情况下，hi3861_sdk中，I2C的CONFIG选项没有打开</p>
+</li>
+<li><p><strong>解决：</strong> 修改<code>vendor\hisi\hi3861\hi3861\build\config\usr_config.mk</code>文件中的<code>CONFIG_I2C_SUPPORT</code>行：</p>
+<ul>
+<li><code># CONFIG_I2C_SUPPORT is not set</code>修改为<code>CONFIG_I2C_SUPPORT=y</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-鸿蒙Theme设置" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -753,58 +829,6 @@ http://www.cnblogs.com/LevinJ/archive/2012/04/09/2439670.html
   
     <h1 itemprop="name">
       <a class="article-title" href="/2016/03/30/pool-english/">pool english</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-程序员的自我修养" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/28/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/" class="article-date">
-      <time datetime="2016-03-28T01:22:42.000Z" itemprop="datePublished">2016-03-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/28/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/">程序员的自我修养</a>
     </h1>
   
 
